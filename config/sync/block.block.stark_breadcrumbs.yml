@@ -1,15 +1,15 @@
-uuid: 17c65a76-e2a5-4d59-9058-7abc88c4f657
+uuid: fbd02860-8dd9-4ca4-a547-ff8fd0260891
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - stark
 _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
-id: bartik_breadcrumbs
-theme: bartik
+id: stark_breadcrumbs
+theme: stark
 region: breadcrumb
 weight: 0
 provider: null

@@ -1,4 +1,4 @@
-uuid: 196c88a0-e751-436e-ab8a-384ec5452dfa
+uuid: 7a7c6f7d-74e4-4085-8940-9356b5c7055d
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - stark
 _core:
   default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
-id: bartik_footer
-theme: bartik
-region: footer_fifth
+id: stark_footer
+theme: stark
+region: sidebar_first
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
