@@ -58,8 +58,6 @@ const breakpoints = () => {
       clearTimeout(resize);
       resize = setTimeout(() => {
         let breakpoint = window.getBreakpoint();
-
-        console.log(breakpoint);
         
         if (breakpoint !== currentBreakpoint) {
           const breakpointEvent = new CustomEvent('breakpoint', {detail: breakpoint})
