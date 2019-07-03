@@ -2,7 +2,13 @@
 	"version": 3,
 	"file": "style.css",
 	"sources": [
-		"../../sass/style.scss"
+		"../../src/sass/style.scss",
+		"../../src/sass/includes/_includes.scss",
+		"../../src/sass/includes/_variables.scss",
+		"../../src/sass/includes/_mixins.scss",
+		"../../src/sass/base/_base.scss",
+		"../../src/sass/components/_components.scss",
+		"../../src/sass/base/_helpers.scss"
 	],
 	"names": [],
 	"mappings": ""

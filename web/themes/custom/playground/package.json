@@ -6,12 +6,12 @@
   "scripts": {
     "postinstall": "npm run build",
     "test": "echo test",
-    "scss:compile": "node-sass --include-path ./node_modules --sourceMap true --output-style compressed sass/style.scss dist/css/style.css",
+    "scss:compile": "node-sass --include-path ./node_modules --sourceMap true --output-style compressed src/sass/style.scss dist/css/style.css",
     "scss:autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers \"last 2 versions\" -r dist/css/style.css",
     "build:js": "webpack",
     "build:scss": "npm run scss:compile && npm run scss:autoprefixer",
     "build": "npm run build:scss && npm run build:js",
-    "watch:scss": "chokidar \"./src/scss\" -c \"npm run build:scss\"",
+    "watch:scss": "chokidar \"./src/sass\" -c \"npm run build:scss\"",
     "watch:js": "chokidar \"./src/js\" -c \"npm run build:js\"",
     "watch": "npm run build && npm-run-all --parallel watch:**",
     "start": "npm-run-all --parallel watch serve"
@@ -25,7 +25,6 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
-    "bootstrap": "^4.3.1",
     "chokidar-cli": "^1.2.2",
     "core-js": "^3.1.4",
     "node-normalize-scss": "^8.0.0",
