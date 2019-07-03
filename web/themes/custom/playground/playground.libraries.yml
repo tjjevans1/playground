@@ -4,3 +4,8 @@ global-styling:
       dist/css/style.css: {}
   js:
     dist/js/index.js: {}
+
+
+app:
+  js:
+    dist/js/app.js: {}
