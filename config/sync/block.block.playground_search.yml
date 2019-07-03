@@ -1,15 +1,15 @@
-uuid: e859996c-c1b7-42e7-849e-7508ad7a335d
+uuid: 76121ae3-afd4-4204-bf27-c89df45da2f7
 langcode: en
 status: true
 dependencies:
   module:
     - search
   theme:
-    - stark
+    - playground
 _core:
   default_config_hash: za-39d5WDUg6XvbyqSnuVYEeq6QM4qKJxW8MnoAha5A
-id: stark_search
-theme: stark
+id: playground_search
+theme: playground
 region: sidebar_first
 weight: -1
 provider: null

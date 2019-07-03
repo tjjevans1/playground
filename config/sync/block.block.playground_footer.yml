@@ -1,4 +1,4 @@
-uuid: 7a7c6f7d-74e4-4085-8940-9356b5c7055d
+uuid: 6ded84f3-5c5f-4954-8ea2-cb426c4f1e57
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - stark
+    - playground
 _core:
   default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
-id: stark_footer
-theme: stark
+id: playground_footer
+theme: playground
 region: sidebar_first
 weight: 0
 provider: null

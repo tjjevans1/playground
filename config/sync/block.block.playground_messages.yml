@@ -1,15 +1,15 @@
-uuid: d2fa5238-cd98-41c7-b635-9ef86f6cc4c7
+uuid: 93407f42-f764-4e90-8545-8be844b7c50f
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - playground
 _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
-id: stark_messages
-theme: stark
+id: playground_messages
+theme: playground
 region: highlighted
 weight: 0
 provider: null

@@ -1,15 +1,15 @@
-uuid: fbd02860-8dd9-4ca4-a547-ff8fd0260891
+uuid: 31810716-2e6e-4e29-9f36-92ad805ce788
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - playground
 _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
-id: stark_breadcrumbs
-theme: stark
+id: playground_breadcrumbs
+theme: playground
 region: breadcrumb
 weight: 0
 provider: null

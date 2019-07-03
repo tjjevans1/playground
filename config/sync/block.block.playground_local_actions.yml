@@ -1,13 +1,13 @@
-uuid: e64cd8a0-94dd-42de-bf4c-caf687542247
+uuid: b58a906b-d4e1-4a01-bd6c-cf2ce57375a8
 langcode: en
 status: true
 dependencies:
   theme:
-    - stark
+    - playground
 _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
-id: stark_local_actions
-theme: stark
+id: playground_local_actions
+theme: playground
 region: content
 weight: -20
 provider: null

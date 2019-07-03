@@ -1,0 +1,7 @@
+core: 8.x
+name: 'Playground'
+description: 'Playground theme'
+base theme: false
+package: 'Custom'
+type: theme
+version: 0.0.1
