@@ -1,8 +1,10 @@
-<div class="pg-accordion">
-  <div class="pg-accordion__item">
-    <h1>Hello World</h1>
-    <div class="pg-accordion__content">
-      <p>Accordion content</p>
+<div class="pg-accordion" data-pg-accordion>
+  {% for i in 1..3 %}
+    <div class="pg-accordion__slide" data-pg-accordion-slide>
+      <h1>Accordion Item {{ i }} Title</h1>
+      <div class="pg-accordion__content" data-pg-accordion-content>
+        <p>Accordion Item {{ i }} content</p>
+      </div>
     </div>
-  </div>
+  {% endfor %}
 </div>

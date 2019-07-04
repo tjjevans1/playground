@@ -4176,6 +4176,18 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
+/***/ "./src/js/components/accordion.js":
+/*!****************************************!*\
+  !*** ./src/js/components/accordion.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nvar accordion = function accordion() {\n  (function ($) {\n    var selectors = {\n      accordion: 'data-pg-accordion',\n      slide: 'data-pg-accordion-slide',\n      content: 'data-pg-accordion-content'\n    };\n    var $selections = {\n      accordions: $(\"[\".concat(selectors.accordion, \"]\"))\n    };\n    var classes = {\n      active: 'is-active'\n    };\n\n    var bindToAccordion = function bindToAccordion(element) {\n      var $accordion = $(element);\n      var $slides = $accordion.find(\"[\".concat(selectors.slide, \"]\"));\n      var $contents = $accordion.find(\"[\".concat(selectors.content, \"]\"));\n      $slides.click(function (e) {\n        var $slide = $(e.delegateTarget);\n        var $content = $slide.find(\"[\".concat(selectors.content, \"]\"));\n        $slides.filter(function (index, element) {\n          return element !== $slide[0];\n        }).removeClass(classes.active);\n        $slide.toggleClass(classes.active);\n        $contents.filter(function (index, element) {\n          return element !== $content[0];\n        }).slideUp();\n        $content.slideToggle();\n      });\n    };\n\n    $selections.accordions.once().each(function (index, element) {\n      bindToAccordion(element);\n    });\n  })(jQuery);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (accordion);\n\n//# sourceURL=webpack:///./src/js/components/accordion.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -4184,7 +4196,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/stable */ \"./node_modules/core-js/stable/index.js\");\n/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_stable__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime/runtime */ \"./node_modules/regenerator-runtime/runtime.js\");\n/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utilities_breakpoints_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/breakpoints.js */ \"./src/js/utilities/breakpoints.js\");\n\n\n\n\n\n\n(function (Drupal) {\n  Drupal.behaviors.playground = {\n    attach: function attach(context, settings) {\n      // Utils\n      Object(_utilities_breakpoints_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n    }\n  };\n})(Drupal);\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/stable */ \"./node_modules/core-js/stable/index.js\");\n/* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_stable__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime/runtime */ \"./node_modules/regenerator-runtime/runtime.js\");\n/* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _utilities_breakpoints_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/breakpoints.js */ \"./src/js/utilities/breakpoints.js\");\n/* harmony import */ var _components_accordion_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/accordion.js */ \"./src/js/components/accordion.js\");\n\n\n\n\n\n\n\n(function (Drupal) {\n  Drupal.behaviors.playground = {\n    attach: function attach(context, settings) {\n      // Utils\n      Object(_utilities_breakpoints_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n      Object(_components_accordion_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n    }\n  };\n})(Drupal);\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

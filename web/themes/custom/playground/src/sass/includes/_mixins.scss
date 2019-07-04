@@ -1,0 +1,18 @@
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table-cell;
+    clear: both;
+  }
+}
+
+@mixin reset-margin-children {
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

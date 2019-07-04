@@ -1,0 +1,11 @@
+.pg-accordion {
+  &__content {
+    @include reset-margin-children;
+    display: none;
+  }
+  
+  &__slide {
+    @include clearfix;
+    cursor: pointer;
+  }
+}
