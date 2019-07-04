@@ -22,21 +22,7 @@
   "scenarios": [
     {
       "label": "playground_homescreen",
-      "url": "https://playground.ddev.site/",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
+      "url": "https://playground.ddev.site/"
     }
   ],
   "paths": {
