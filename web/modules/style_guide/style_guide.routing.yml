@@ -1,0 +1,6 @@
+style_guide.home:
+  path: '/style-guide'
+  defaults:
+    _controller: 'Drupal\style_guide\Controller\StyleGuideController::home'
+  requirements:
+    _role: 'authenticated'

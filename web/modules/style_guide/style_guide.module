@@ -1,0 +1,12 @@
+<?php
+
+function style_guide_theme($existing, $type, $theme, $path) {
+  return [
+    'page__style_guide' => [
+      'template' => 'page--style-guide'
+    ],
+    'style_guide' => [
+      'variables' => [],
+    ]
+  ];
+}
