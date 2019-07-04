@@ -25,3 +25,8 @@
 
 # Ignore node_modules
 node_modules
+
+# Ignore testing data
+/backstop_data/bitmaps_reference
+/backstop_data/bitmaps_test
+/backstop_data/html_report
