@@ -13,7 +13,7 @@ const accordion = () => {
 
     const classes = {
       active: 'is-active'
-    }
+    };
 
     const bindToAccordion = (element) => {
       const $accordion = $(element);
