@@ -72,8 +72,6 @@
  * @ingroup themeable
  */
 #}
-{{ attach_library('playground/app') }}
-
 <article{{attributes}}>
 
   {{ title_prefix }}
@@ -98,10 +96,6 @@
   {% endif %}
 
   <div{{content_attributes}}>
-    <div id="react-app">
-      React app will load here.
-    </div>
-    <hr/>
     {{ content }}
   </div>
 

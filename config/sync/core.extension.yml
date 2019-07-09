@@ -29,7 +29,9 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  rest: 0
   search: 0
+  serialization: 0
   shortcut: 0
   style_guide: 0
   system: 0
