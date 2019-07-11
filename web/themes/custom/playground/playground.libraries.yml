@@ -9,3 +9,5 @@ global-styling:
 app:
   js:
     dist/js/app.js: {}
+  dependencies:
+     - core/drupalSettings

@@ -1,5 +1,55 @@
 <?php
 
+use Drupal\views\Views;
+
 function playground_preprocess_node(&$variables) {
 
+}
+
+function playground_preprocess_views_view__pages__page_2(&$variables) {
+  $view = Views::getView('pages');
+  $view->setDisplay('rest_export_1');
+  $view->preExecute();
+  $view->execute();
+
+  $filters = [];
+
+  if (!$view->filter) {
+    return;
+  }
+
+  foreach ($view->filter as $filter) {
+
+    if($filter->isExposed()) {
+      $options = [];
+
+      $filter_options = $filter->getValueOptions();
+
+      if($filter->getPluginId() === 'taxonomy_index_tid') {
+        $filter_options = [];
+        $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($filter->options['vid']);
+        foreach ($terms as $term) {
+          $filter_options[$term->tid] = $term->name;
+        }
+      }
+
+      if(!$filter_options) {continue;}
+
+      foreach($filter_options as $id => $label) {
+        $options[] = [
+          'id' => $id,
+          'label' => $label
+        ];
+      };
+
+      $filters[] = [
+        'id' => $filter->options['id'],
+        'options' => $options,
+        'label' => $filter->pluginTitle(),
+        'operator' => $filter->operator,
+      ];
+    };
+  }
+
+  $variables['#attached']['drupalSettings']['playground']['pages_react']['filters'] = $filters;
 }

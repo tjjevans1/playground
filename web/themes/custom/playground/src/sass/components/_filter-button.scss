@@ -1,0 +1,9 @@
+.pg-filter-button {
+  &:focus {
+    outline-color: red;
+  }
+
+  &.is-active {
+    background-color: red;
+  }
+}
