@@ -21,9 +21,51 @@ class App extends React.Component {
   }
 
   filterNodes() {
+    const tests = [];
+    
+    this.state.filters.forEach(filter => {
+      const values = filter.options.filter(option => {
+        return option.active;
+      }).map(option => {
+        return option.id.toString();
+      });
+
+      if (values.length > 0) {
+        tests.push({
+          id: filter.id,
+          operator: filter.operator,
+          values: values,
+          key: filter.testKey,
+        });
+      }
+    });
+
     const nodes = this.state.data.filter(node => {
-      // console.log(node);
-      return true;
+      let pass = true;
+
+      tests.forEach(test => {
+        switch(test.operator) {
+          case 'and':
+            test.values.forEach(value => {
+              if (!node[test.key].includes(value)) {
+                pass = false;
+              }
+            });           
+            break;
+          case 'in':
+          case 'or':
+            pass = false;
+            test.values.forEach(value => {
+              if (node[test.key].includes(value)) {
+                pass = true;
+              }
+            }); 
+            break;
+        }
+        return pass;
+      });
+      
+      return pass;
     });
     return nodes;
   }

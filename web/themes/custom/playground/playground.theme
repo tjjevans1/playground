@@ -42,12 +42,25 @@ function playground_preprocess_views_view__pages__page_2(&$variables) {
         ];
       };
 
+      $test = null;
+
+      if (isset($filter->definition['entity field'])) {
+        $test = $filter->definition['entity field'];
+      }
+
+      if (isset($filter->definition['field_name'])) {
+        $test = $filter->definition['field_name'];
+      }
+
       $filters[] = [
         'id' => $filter->options['id'],
         'options' => $options,
         'label' => $filter->pluginTitle(),
         'operator' => $filter->operator,
+        'testKey' => $test,
       ];
+
+      
     };
   }
 
