@@ -44,25 +44,26 @@ class App extends React.Component {
       let pass = true;
 
       tests.forEach(test => {
-        switch(test.operator) {
-          case 'and':
-            test.values.forEach(value => {
-              if (!node[test.key].includes(value)) {
-                pass = false;
-              }
-            });           
-            break;
-          case 'in':
-          case 'or':
-            pass = false;
-            test.values.forEach(value => {
-              if (node[test.key].includes(value)) {
-                pass = true;
-              }
-            }); 
-            break;
+        if (pass) {
+          switch(test.operator) {
+            case 'and':
+              test.values.forEach(value => {
+                if (!node[test.key].includes(value)) {
+                  pass = false;
+                }
+              });           
+              break;
+            case 'in':
+            case 'or':
+              pass = false;
+              test.values.forEach(value => {
+                if (node[test.key].includes(value)) {
+                  pass = true;
+                }
+              }); 
+              break;
+          }
         }
-        return pass;
       });
       
       return pass;
@@ -99,20 +100,16 @@ class App extends React.Component {
           if (option_id === ALL_ID) {
             option.active = false;
           } else {
-            switch(filter.operator) {
-              case 'in':
-                if (option.id === option_id) {
-                  option.active = !option.active;
-                } else {
-                  option.active = false;
-                }
-                break;
-              case 'or':
-              case 'and':
-                if (option.id === option_id) {
-                  option.active = !option.active;
-                }
-                break;
+            if(filter.multiple) {
+              if (option.id === option_id) {
+                option.active = !option.active;
+              }
+            } else {
+              if (option.id === option_id) {
+                option.active = !option.active;
+              } else {
+                option.active = false;
+              }
             }
           }
 

@@ -57,10 +57,9 @@ function playground_preprocess_views_view__pages__page_2(&$variables) {
         'options' => $options,
         'label' => $filter->pluginTitle(),
         'operator' => $filter->operator,
+        'multiple' => $filter->options['expose']['multiple'],
         'testKey' => $test,
       ];
-
-      
     };
   }
 
