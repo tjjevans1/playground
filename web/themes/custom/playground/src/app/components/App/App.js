@@ -18,17 +18,40 @@ class App extends React.Component {
 
     this.handleFilterChange = this.handleFilterChange.bind(this);
     this.filterNodes = this.filterNodes.bind(this);
+    this.updateURL = this.updateURL.bind(this);
+  }
+
+  getFilterValues(filter) {
+    const values = filter.options.filter(option => {
+      return option.active;
+    }).map(option => {
+      return option.id.toString();
+    });
+
+    return values;
+  }
+
+  updateURL(filters) {
+    const params = new URLSearchParams;
+
+    filters.forEach(filter => {
+      const values = this.getFilterValues(filter);
+
+      if(values.length > 0) {
+        values.forEach(value => {
+          params.append(filter.id, value);
+        })
+      }
+    });
+
+    window.history.pushState({ filters: filters }, '', `?${params.toString()}`);
   }
 
   filterNodes() {
     const tests = [];
     
     this.state.filters.forEach(filter => {
-      const values = filter.options.filter(option => {
-        return option.active;
-      }).map(option => {
-        return option.id.toString();
-      });
+      const values = this.getFilterValues(filter);
 
       if (values.length > 0) {
         tests.push({
@@ -84,9 +107,13 @@ class App extends React.Component {
       return filter;
     });
 
+    const params = new URLSearchParams(window.location.search);
+
     filters.map(filter => {
+      const values = params.getAll(filter.id);
+      
       return filter.options.map(option => {
-        return option.active = false;
+        return option.active = values.includes(option.id.toString());
       });
     })
 
@@ -120,6 +147,7 @@ class App extends React.Component {
       return filter;
     });
 
+    this.updateURL(filters);
     this.setState({filters: filters});
   };
 
