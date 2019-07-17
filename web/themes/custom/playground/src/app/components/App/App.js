@@ -115,7 +115,7 @@ class App extends React.Component {
       return filter.options.map(option => {
         return option.active = values.includes(option.id.toString());
       });
-    })
+    });
 
     return filters;
   }
