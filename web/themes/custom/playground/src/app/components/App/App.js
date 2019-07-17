@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Node from '../Node/Node';
 import FilterGroup from '../FilterGroup/FilterGroup';
@@ -7,21 +7,12 @@ const url = '/rest/pages';
 
 const ALL_ID = 'all';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      data: [],
-      filters: [],
-    };
+function App (props) {
+  const [stateLoading, setLoading] = useState(false);
+  const [stateData, setData] = useState([]);
+  const [stateFilters, setFilters] = useState([]);
 
-    this.handleFilterChange = this.handleFilterChange.bind(this);
-    this.filterNodes = this.filterNodes.bind(this);
-    this.updateURL = this.updateURL.bind(this);
-  }
-
-  getFilterValues(filter) {
+  function getFilterValues (filter) {
     const values = filter.options.filter(option => {
       return option.active;
     }).map(option => {
@@ -31,11 +22,11 @@ class App extends React.Component {
     return values;
   }
 
-  updateURL(filters) {
+  function updateURL (filters) {
     const params = new URLSearchParams;
 
     filters.forEach(filter => {
-      const values = this.getFilterValues(filter);
+      const values = getFilterValues(filter);
 
       if(values.length > 0) {
         values.forEach(value => {
@@ -47,11 +38,11 @@ class App extends React.Component {
     window.history.pushState({ filters: filters }, '', `?${params.toString()}`);
   }
 
-  filterNodes() {
+  function filterNodes () {
     const tests = [];
     
-    this.state.filters.forEach(filter => {
-      const values = this.getFilterValues(filter);
+    stateFilters.forEach(filter => {
+      const values = getFilterValues(filter);
 
       if (values.length > 0) {
         tests.push({
@@ -63,7 +54,7 @@ class App extends React.Component {
       }
     });
 
-    const nodes = this.state.data.filter(node => {
+    const nodes = stateData.filter(node => {
       let pass = true;
 
       tests.forEach(test => {
@@ -94,7 +85,7 @@ class App extends React.Component {
     return nodes;
   }
 
-  buildFilters() {
+  function buildFilters () {
     const filters = window.drupalSettings.playground.pages_react.filters.map(filter => {
       filter.options = [
         {
@@ -120,8 +111,8 @@ class App extends React.Component {
     return filters;
   }
 
-  handleFilterChange(filter_id, option_id) {
-    const filters = this.state.filters.map(filter => {
+  function handleFilterChange (filter_id, option_id) {
+    const filters = stateFilters.map(filter => {
       if (filter.id === filter_id) {
         filter.options.map(option => {
           if (option_id === ALL_ID) {
@@ -147,56 +138,54 @@ class App extends React.Component {
       return filter;
     });
 
-    this.updateURL(filters);
-    this.setState({filters: filters});
+    updateURL(filters);
+    setFilters(filters);
   };
 
-  handleResponseData(data) {
-    this.setState({
-      data: data,
-      filters: this.buildFilters()
-    });
+  function handleResponseData (data) {
+    setData(data);
+    setFilters(buildFilters());
   }
 
-  componentDidMount() {
-    this.setState({loading: true});
-    
-    axios.get(url)
-      .then(res => {
-        this.handleResponseData(res.data);
-      }).catch(err => {
-        console.log(err);
-      }).finally(() => {
-        this.setState({ loading: false });
-      });
-  }
+  useEffect(() => {
+    if (stateData.length === 0 && !stateLoading) {
+      setLoading(true);
 
-  render() {
-    if(this.state.loading) {
-      return (<div>Loading...</div>);
+      axios.get(url)
+        .then(res => {
+          handleResponseData(res.data);
+        }).catch(err => {
+          console.log(err);
+        }).finally(() => {
+          setLoading(false);
+        });
     }
+  });
 
-    const nodes = this.filterNodes();
-
-    return (
-      <div>
-        <FilterGroup 
-          filters={this.state.filters} 
-          handleFilterChange={this.handleFilterChange}
-        />
-        <div>
-          {nodes.map((node, key) => {
-            return (
-              <Node 
-              key={key}
-              node={node}
-              />
-              );
-          })}
-        </div>
-      </div>
-    );
+  if(stateLoading) {
+    return (<div>Loading...</div>);
   }
+
+  const nodes = filterNodes();
+
+  return (
+    <div>
+      <FilterGroup 
+        filters={stateFilters} 
+        handleFilterChange={handleFilterChange}
+      />
+      <div>
+        {nodes.map((node, key) => {
+          return (
+            <Node 
+            key={key}
+            node={node}
+            />
+            );
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default App;

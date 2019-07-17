@@ -2,33 +2,26 @@ import React from 'react';
 
 import FilterButton from '../FilterButton/FilterButton';
 
-class Filter extends React.Component {
-  constructor(props) {
-    super(props);
+function Filter (props) {
 
-    this.handleButtonClick = this.handleButtonClick.bind(this);
+  function handleButtonClick (option_id) {
+    props.handleFilterChange(props.filter.id, option_id);
   }
 
-  handleButtonClick(option_id) {
-    this.props.handleFilterChange(this.props.filter.id, option_id);
-  }
-
-  render() {
-    return (
-      <div>
-        <h5>{this.props.filter.label}</h5>
-        {this.props.filter.options.map((option, key) => {
-          return (
-            <FilterButton
-              option={option} 
-              key={key} 
-              handleButtonClick={this.handleButtonClick}
-            />
-          );
-        })}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h5>{props.filter.label}</h5>
+      {props.filter.options.map((option, key) => {
+        return (
+          <FilterButton
+            option={option} 
+            key={key} 
+            handleButtonClick={handleButtonClick}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 export default Filter;

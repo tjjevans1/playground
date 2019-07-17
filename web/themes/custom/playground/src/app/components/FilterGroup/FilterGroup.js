@@ -2,32 +2,25 @@ import React from 'react';
 
 import Filter from '../Filter/Filter';
 
-class FilterGroup extends React.Component {
-  constructor(props) {
-    super(props);
+function FilterGroup (props) {
 
-    this.handleFilterChange = this.handleFilterChange.bind(this);
+  function handleFilterChange(filter_id, option_id) {
+    props.handleFilterChange(filter_id, option_id);
   }
 
-  handleFilterChange(filter_id, option_id) {
-    this.props.handleFilterChange(filter_id, option_id);
-  }
-
-  render() {
-    return (
-      <div>
-        {this.props.filters.map((filter, key) => {
-          return (
-            <Filter 
-              filter={filter} 
-              key={key}
-              handleFilterChange={this.handleFilterChange}
-              />
-          );
-        })}
-      </div>
-    );
-  }
+  return (
+    <div>
+      {props.filters.map((filter, key) => {
+        return (
+          <Filter 
+            filter={filter} 
+            key={key}
+            handleFilterChange={handleFilterChange}
+            />
+        );
+      })}
+    </div>
+  );
 }
 
 export default FilterGroup;

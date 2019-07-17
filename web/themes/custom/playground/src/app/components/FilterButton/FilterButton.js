@@ -5,35 +5,27 @@ const CLASSES = {
   isActive: 'is-active'
 };
 
-class FilterButton extends React.Component {
+function FilterButton (props) {
 
-  constructor(props) {
-    super(props);
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-  
-  handleClick() {
-    this.props.handleButtonClick(this.props.option.id);
+  function handleClick() {
+    props.handleButtonClick(props.option.id);
   }
 
-  render() {
-    let classes = [
-      CLASSES.filterButton
-    ];
+  let classes = [
+    CLASSES.filterButton
+  ];
 
-    if(this.props.option.active) {
-      classes.push(CLASSES.isActive);
-    }
-
-    return (
-      <button 
-        className={classes.join(' ')}
-        onClick={this.handleClick}>
-        {this.props.option.label}
-      </button>
-    );
+  if (props.option.active) {
+    classes.push(CLASSES.isActive);
   }
+
+  return (
+    <button 
+      className={classes.join(' ')}
+      onClick={handleClick}>
+      {props.option.label}
+    </button>
+  );
 }
 
 export default FilterButton;
