@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FilterContext } from '../../contexts/Filter/filter-context';
 
 const CLASSES = {
   filterButton: 'pg-filter-button',
@@ -6,9 +7,10 @@ const CLASSES = {
 };
 
 function FilterButton (props) {
+  const filterContext = useContext(FilterContext);
 
   function handleClick() {
-    props.handleButtonClick(props.option.id);
+    filterContext.updateFilter(props.filterId, props.option.id);
   }
 
   let classes = [

@@ -170,11 +170,13 @@ function App (props) {
   const nodes = filterNodes();
 
   return (
-    <FilterContext.Provider value={stateFilters}>
+    <FilterContext.Provider value={{
+      filters: stateFilters,
+      updateFilter: handleFilterChange
+      }}>
       <div>
         <FilterGroup 
           filters={stateFilters} 
-          handleFilterChange={handleFilterChange}
           />
         <div>
           {nodes.map((node, key) => {

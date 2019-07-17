@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { FilterContext } from '../../contexts/Filter/filter-context';
 
 function Tags (props) {
-  const filters = useContext(FilterContext);
+  const filterContext = useContext(FilterContext);
 
   let tags = [];
 
@@ -12,7 +12,7 @@ function Tags (props) {
     });
   }
 
-  const filter = filters.filter(filter => filter.testKey === props.fieldId).shift();
+  const filter = filterContext.filters.filter(filter => filter.testKey === props.fieldId).shift();
 
   tags = tags.map(tag => {
     return filter.options.filter(option => option.id === tag).shift().label;
