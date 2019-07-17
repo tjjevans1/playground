@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FilterContext } from '../../contexts/Filter/filter-context';
 
 function Tags (props) {
+  const filters = useContext(FilterContext);
+
   let tags = [];
 
   if (props.tags.length > 0) {
@@ -8,6 +11,12 @@ function Tags (props) {
       return parseInt(tag) ? parseInt(tag) : null;
     });
   }
+
+  const filter = filters.filter(filter => filter.testKey === props.fieldId).shift();
+
+  tags = tags.map(tag => {
+    return filter.options.filter(option => option.id === tag).shift().label;
+  });
 
   return (
     <div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Node from '../Node/Node';
 import FilterGroup from '../FilterGroup/FilterGroup';
+import { FilterContext } from '../../contexts/Filter/filter-context';
 
 const url = '/rest/pages';
 
@@ -169,22 +170,24 @@ function App (props) {
   const nodes = filterNodes();
 
   return (
-    <div>
-      <FilterGroup 
-        filters={stateFilters} 
-        handleFilterChange={handleFilterChange}
-      />
+    <FilterContext.Provider value={stateFilters}>
       <div>
-        {nodes.map((node, key) => {
-          return (
-            <Node 
-            key={key}
-            node={node}
-            />
-            );
-        })}
+        <FilterGroup 
+          filters={stateFilters} 
+          handleFilterChange={handleFilterChange}
+          />
+        <div>
+          {nodes.map((node, key) => {
+            return (
+              <Node 
+              key={key}
+              node={node}
+              />
+              );
+            })}
+        </div>
       </div>
-    </div>
+    </FilterContext.Provider>
   );
 }
 

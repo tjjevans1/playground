@@ -2,9 +2,9 @@ import React from 'react';
 
 import FilterButton from '../FilterButton/FilterButton';
 
-function Filter (props) {
+function Filter(props) {
 
-  function handleButtonClick (option_id) {
+  function handleButtonClick(option_id) {
     props.handleFilterChange(props.filter.id, option_id);
   }
 
@@ -14,8 +14,9 @@ function Filter (props) {
       {props.filter.options.map((option, key) => {
         return (
           <FilterButton
-            option={option} 
             key={key} 
+            option={option} 
+            filterId={props.filter.id}
             handleButtonClick={handleButtonClick}
           />
         );
