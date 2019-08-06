@@ -7,6 +7,13 @@
   }
 }
 
+// Button reset. Remove padding, border and background color from button
+@mixin button-reset() {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
 @mixin reset-margin-children {
   & > :first-child {
     margin-top: 0;

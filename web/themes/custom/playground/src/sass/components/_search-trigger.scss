@@ -1,0 +1,61 @@
+.pg-search-trigger {
+  @include button-reset;
+  font-size: 0;
+  height: 17px;
+  width: 17px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 82%;
+    height: 82%;
+    border: 2px solid black;
+    border-radius: 50%;
+    transform-origin: 100% 50%;
+    transition: opacity 0.2s linear;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: 50% 50%;
+    background-color: black;
+    transition: width 0.2s linear;
+  }
+
+  span {
+    height: 2px;
+    width: 46%;
+    transform: translateY(50%) rotate(45deg);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform-origin: 100% 50%;
+    background-color: black;
+    transition: width 0.2s linear;
+  }
+
+  &:focus {
+    outline: none;
+
+    span {
+      width: 135%;
+    }
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:after {
+      width: 135%;
+    }
+  }
+}

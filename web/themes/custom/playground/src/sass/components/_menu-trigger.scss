@@ -1,0 +1,53 @@
+.pg-menu-trigger {
+  @include button-reset;
+  font-size: 0;
+  height: 14px;
+  width: 23px;
+  position: relative;
+  margin-left: 20px;
+
+  &:before,
+  &:after,
+  span {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    height: 2px;
+    left: 0;
+    display: inline-block;
+    transition: opacity 0.2s linear, transform 0.2s linear, top 0.2s linear, bottom 0.2s linear;
+    transform-origin: 50% 50%;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  &:focus {
+    outline: none;
+    
+    span {
+      opacity: 0;
+    }
+
+    &:before {
+      transform: rotate(45deg) translateY(-50%);
+      top: 50%;
+    }
+
+    &:after {
+      transform: rotate(-45deg) translateY(50%);
+      bottom: 50%;
+    }
+  }
+}
