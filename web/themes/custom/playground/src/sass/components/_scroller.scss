@@ -1,0 +1,65 @@
+.hilm-scroller {
+  &__main {
+    margin-bottom: $spacing-margin;
+  }
+}
+@include media-breakpoint-up(md) {
+  .hilm-scroller {
+    position: relative;
+
+    &__main {
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+
+    &__row {
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    &__inset-row {
+      @include clearfix();
+      display: block;
+
+      & > :nth-child(odd) {
+        float: left;
+        clear: left;
+      }
+
+      & > :nth-child(even) {
+        float: right;
+        clear: right;
+      }
+    }
+
+    &__head {
+      @include clearfix;
+    }
+
+    &.is-fixed {
+      .hilm-scroller {
+        &__head {
+          position: fixed;
+        }
+        &__main {
+          position: fixed;
+          padding-top: 0;
+        }
+      }
+    }
+
+    &.is-finished {
+      .hilm-scroller {
+        &__row {
+          align-items: flex-end;
+        }
+
+        &__head {
+          position: absolute;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import "regenerator-runtime/runtime";
 import breakpoints from './utilities/breakpoints.js';
 
 import accordion from './components/accordion.js';
+import scroller from './components/scroller.js';
 
 (function (Drupal) {
 
@@ -15,6 +16,7 @@ import accordion from './components/accordion.js';
       breakpoints();
 
       accordion();
+      scroller();
     },
   };
 

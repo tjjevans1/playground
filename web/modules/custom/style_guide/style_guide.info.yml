@@ -1,5 +1,5 @@
 type: module
-name: Theatre Monkey styleguide
-description: "Theatre Monkey styleguide"
+name: Playground styleguide
+description: "Playground styleguide"
 core: 8.x
 package: 'Custom'
