@@ -1,7 +1,7 @@
 import 'waypoints/lib/jquery.waypoints.min.js';
 
 const scroller = () => {
-  (function($) {
+  (function ($) {
     const selector = {
       scroller: 'data-hilm-scroller',
       main: 'data-hilm-scroller-main',
@@ -70,8 +70,8 @@ const scroller = () => {
       });
 
       waypoints.push($scroller.waypoint({
-        handler: function(direction) {
-          if(direction == 'down') {
+        handler: function (direction) {
+          if (direction == 'down') {
             const mainRect = $main[0].getBoundingClientRect();
             const headRect = $head[0].getBoundingClientRect();
 
@@ -89,11 +89,11 @@ const scroller = () => {
               width: headRect.width,
             });
 
-            $scroller.addClass(classes.fixed);
-
             const $wrap = $('<div>').css({ height: $head.outerHeight() });
 
             $head.wrap($wrap);
+
+            $scroller.addClass(classes.fixed);
 
           } else {
             $scroller.removeClass(classes.fixed);
@@ -161,7 +161,7 @@ const scroller = () => {
         },
         offset: -($scroller.outerHeight() - $(window).height()) - (($(window).height() - ($main.outerHeight() + $head.outerHeight())) / 2),
       }));
-    }; 
+    };
 
     if (!['xs', 'sm'].includes(window.getBreakpoint())) {
       $selections.scrollers.one('scroller').each((index, element) => {
@@ -180,7 +180,7 @@ const scroller = () => {
         });
       }
     });
-    
+
     let resize;
     $(window).one('breakpoint-resize').on('resize', (e) => {
       clearTimeout(resize);
