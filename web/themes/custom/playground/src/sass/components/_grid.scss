@@ -1,0 +1,12 @@
+.tm-grid {
+  margin: $spacing-margin 0;
+
+  &__title {
+    margin-top: 0;
+    color: black;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+}

@@ -11,7 +11,7 @@
     "build:app": "webpack --config-name app",
     "build:js": "webpack --config-name main",
     "build:scss": "npm run scss:compile && npm run scss:autoprefixer",
-    "build": "npm run build:scss && npm run build:js",
+    "build": "npm-run-all --parallel build:**",
     "watch:app": "chokidar \"./src/app\" -c \"npm run build:app\"",
     "watch:scss": "chokidar \"./src/sass\" -c \"npm run build:scss\"",
     "watch:js": "chokidar \"./src/js\" -c \"npm run build:js\"",

@@ -7,6 +7,7 @@ import breakpoints from './utilities/breakpoints.js';
 
 import accordion from './components/accordion.js';
 import scroller from './components/scroller.js';
+import grid from './components/grid.js';
 
 (function (Drupal) {
 
@@ -17,6 +18,7 @@ import scroller from './components/scroller.js';
 
       accordion();
       scroller();
+      grid();
     },
   };
 
