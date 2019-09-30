@@ -41,6 +41,7 @@ const revealer = () => {
           } else {
             $last.unwrap();
             $last.removeClass(classes.fixed);
+            $text.css('bottom', `50%`);
 
             $(window).off('scroll', handleTextScroll);
           }
@@ -52,6 +53,7 @@ const revealer = () => {
           if ((direction) == 'down') {
             $last.unwrap();
             $last.removeClass(classes.fixed);
+            $text.css('bottom', `50%`);
 
             $(window).off('scroll', handleTextScroll);
           } else {
