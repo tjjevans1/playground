@@ -8,6 +8,7 @@ import breakpoints from './utilities/breakpoints.js';
 import accordion from './components/accordion.js';
 import scroller from './components/scroller.js';
 import grid from './components/grid.js';
+import revealer from './components/revealer.js';
 
 (function (Drupal) {
 
@@ -19,6 +20,7 @@ import grid from './components/grid.js';
       accordion();
       scroller();
       grid();
+      revealer();
     },
   };
 

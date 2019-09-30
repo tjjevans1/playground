@@ -1,0 +1,41 @@
+.pg-revealer {
+  position: relative;
+
+  &__section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    &:first-child {
+      background-color: red;
+      
+      .pg-revealer__text {
+        color: blue;
+      }
+    }
+    
+    &:last-child {
+      background-color: blue;
+      
+  
+      .pg-revealer__text  {
+        color: red;
+      }
+    }
+
+    &.is-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+  }
+}

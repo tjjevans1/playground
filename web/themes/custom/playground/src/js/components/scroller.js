@@ -1,11 +1,11 @@
 import 'waypoints/lib/jquery.waypoints.min.js';
 
 const scroller = () => {
-  (function ($) {
+  (function($) {
     const selector = {
-      scroller: 'data-hilm-scroller',
-      main: 'data-hilm-scroller-main',
-      head: 'data-hilm-scroller-head',
+      scroller: 'data-pg-scroller',
+      main: 'data-pg-scroller-main',
+      head: 'data-pg-scroller-head',
     };
 
     const $selections = {
@@ -70,8 +70,8 @@ const scroller = () => {
       });
 
       waypoints.push($scroller.waypoint({
-        handler: function (direction) {
-          if (direction == 'down') {
+        handler: function(direction) {
+          if(direction == 'down') {
             const mainRect = $main[0].getBoundingClientRect();
             const headRect = $head[0].getBoundingClientRect();
 
@@ -90,7 +90,7 @@ const scroller = () => {
             });
 
             const $wrap = $('<div>').css({ height: $head.outerHeight() });
-
+            
             $head.wrap($wrap);
 
             $scroller.addClass(classes.fixed);
@@ -161,15 +161,15 @@ const scroller = () => {
         },
         offset: -($scroller.outerHeight() - $(window).height()) - (($(window).height() - ($main.outerHeight() + $head.outerHeight())) / 2),
       }));
-    };
+    }; 
 
     if (!['xs', 'sm'].includes(window.getBreakpoint())) {
-      $selections.scrollers.one('scroller').each((index, element) => {
+      $selections.scrollers.once('scroller').each((index, element) => {
         bindToScroller(element);
       });
     }
 
-    $(window).one().on('breakpoint', (e) => {
+    $(window).on('breakpoint', (e) => {
       waypoints.forEach(waypoint => {
         waypoint[0].destroy();
       });
@@ -180,9 +180,9 @@ const scroller = () => {
         });
       }
     });
-
+    
     let resize;
-    $(window).one('breakpoint-resize').on('resize', (e) => {
+    $(window).once('breakpoint-resize').on('resize', (e) => {
       clearTimeout(resize);
       resize = setTimeout(() => {
         $selections.scrollers.filter((index, element) => {
