@@ -26,7 +26,9 @@ const revealer = () => {
       let $last = $sections.last();
 
       const handleTextScroll = (e) => {
-        $text.css('bottom', `calc(50% + ${$revealer[0].getBoundingClientRect().y}px`);
+        window.requestAnimationFrame(() => {
+          $text.css('bottom', `calc(50% + ${$revealer[0].getBoundingClientRect().y}px`);
+        });
       };
 
       waypoints.push($revealer.waypoint({

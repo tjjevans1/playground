@@ -47,20 +47,24 @@ const scroller = () => {
       });
     };
 
-    const bindToScroller = (element) => {
+    const unbindFromScroller = function(element) {
       const $scroller = $(element);
-      const $main = $scroller.find(`[${selector.main}]`);
-      const $head = $scroller.find(`[${selector.head}]`);
-
+      const $main = $scroller.find("[" + selector.main + "]");
+      const $head = $scroller.find("[" + selector.head + "]");
+  
       $scroller.removeClass(classes.fixed, classes.finished);
-
+  
+      if ($head.parent('[' + selector.scroller + ']').length < 1) {
+        $head.unwrap();
+      }
+  
       $main.css({
         top: '',
         left: '',
         height: '',
         width: '',
       });
-
+  
       $head.css({
         top: '',
         left: '',
@@ -68,6 +72,14 @@ const scroller = () => {
         width: '',
         bottom: ''
       });
+    }
+
+    const bindToScroller = (element) => {
+      unbindFromScroller(element);
+      
+      const $scroller = $(element);
+      const $main = $scroller.find(`[${selector.main}]`);
+      const $head = $scroller.find(`[${selector.head}]`);
 
       waypoints.push($scroller.waypoint({
         handler: function(direction) {
