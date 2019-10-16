@@ -1,0 +1,18 @@
+.pg-hero {
+  padding-top: 100%;
+  position: relative;
+  background-color: $colour-cream;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-hero {
+    padding-top: 56.25%;
+  }
+}
