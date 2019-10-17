@@ -6,6 +6,7 @@ const revealer = () => {
       revealer: 'data-pg-revealer',
       section: 'data-pg-revealer-section',
       text: 'data-pg-revealer-text',
+      content: 'data-pg-revealer-content'
     };
 
     const $selections = {
@@ -22,30 +23,33 @@ const revealer = () => {
       let $revealer = $(element);
       let $sections = $revealer.find(`[${selector.section}]`);
       let $first = $sections.first();
-      let $text = $first.find(`[${selector.text}]`);
-      let $last = $sections.last();
+      let height = $first.outerHeight();
 
-      const handleTextScroll = (e) => {
+      const handleScroll = (e) => {
         window.requestAnimationFrame(() => {
-          $text.css('bottom', `calc(50% + ${$revealer[0].getBoundingClientRect().y}px`);
+          $first.css('max-height', `${height + $revealer[0].getBoundingClientRect().y}px`);
         });
       };
 
       waypoints.push($revealer.waypoint({
         handler: function(direction) {
           if ((direction) == 'down') {
-            const $wrap = $('<div>').css({ height: $last.outerHeight()});
             
-            $last.wrap($wrap);
-            $last.addClass(classes.fixed);
+            $sections.each((index, element) => {
+              const $section = $(element);
+              const $wrap = $('<div>').css({ height: $section.outerHeight()});
+              $section.wrap($wrap);
+              $first.find(`[${selector.content}]`).css({ height: height});
+            });
+            $sections.addClass(classes.fixed);
 
-            $(window).on('scroll', handleTextScroll);
+            $(window).on('scroll', handleScroll);
           } else {
-            $last.unwrap();
-            $last.removeClass(classes.fixed);
-            $text.css('bottom', `50%`);
+            $sections.removeClass(classes.fixed);
 
-            $(window).off('scroll', handleTextScroll);
+            $sections.unwrap();
+
+            $(window).off('scroll', handleScroll);
           }
         }
       }));
@@ -53,18 +57,23 @@ const revealer = () => {
       waypoints.push($revealer.waypoint({
         handler: function(direction) {
           if ((direction) == 'down') {
-            $last.unwrap();
-            $last.removeClass(classes.fixed);
-            $text.css('bottom', `50%`);
+            $sections.removeClass(classes.fixed);
 
-            $(window).off('scroll', handleTextScroll);
+            $sections.unwrap();
+
+            $(window).off('scroll', handleScroll);
+
+            $first[0].removeAttribute('style');
           } else {
-            const $wrap = $('<div>').css({ height: $last.outerHeight()});
-            
-            $last.wrap($wrap);
-            $last.addClass(classes.fixed);
-
-            $(window).on('scroll', handleTextScroll);
+            $sections.each((index, element) => {
+              const $section = $(element);
+              const $wrap = $('<div>').css({ height: $section.outerHeight()});
+              
+              $section.wrap($wrap);
+            });
+            $first.css('max-height', `0`)
+            $sections.addClass(classes.fixed);
+            $(window).on('scroll', handleScroll);
           }
         },
         offset: 'bottom-in-view',

@@ -6,15 +6,16 @@
     overflow: hidden;
     position: relative;
 
-    &:first-child {
+    &--first {
       background-color: red;
+      z-index: 1;
       
       .pg-revealer__text {
         color: blue;
       }
     }
     
-    &:last-child {
+    &--last {
       background-color: blue;
       
   
@@ -28,8 +29,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: -1;
     }
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
   }
 
   &__text {
