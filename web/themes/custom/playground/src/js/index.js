@@ -9,6 +9,7 @@ import accordion from './components/accordion.js';
 import scroller from './components/scroller.js';
 import grid from './components/grid.js';
 import revealer from './components/revealer.js';
+import player from './components/player.js';
 
 (function (Drupal) {
 
@@ -21,6 +22,7 @@ import revealer from './components/revealer.js';
       scroller();
       grid();
       revealer();
+      player();
     },
   };
 

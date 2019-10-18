@@ -1,0 +1,27 @@
+.pg-player {
+  @include clearfix;
+  position: relative;
+  
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+
+    &.is-fixed {
+      position: fixed;
+    }
+
+    &.is-finished {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &__content {
+    min-height: 100vh;
+  }
+}
