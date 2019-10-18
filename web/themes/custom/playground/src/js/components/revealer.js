@@ -45,14 +45,18 @@ const revealer = () => {
       });
     };
 
-    const fixRevealer = ($sections, handleScroll) => {
+    const fixRevealer = ($sections, handleScroll, direction) => {
       $sections.each((index, element) => {
         const $section = $(element);
         const $wrap = $('<div>').css({ height: $section.outerHeight()});
         $section.wrap($wrap);
-
+        
         const height = $section.outerHeight();
         $section.find(`[${selector.content}]`).css({ height: height});
+
+        if (index === 0 && direction !== 'down') {
+          $section.css('max-height', 0)
+        }
       });
 
       $sections.addClass(classes.fixed);
@@ -71,7 +75,7 @@ const revealer = () => {
           handler: function(direction) {
             if ((direction) == 'down') {
               if (!bottom) {
-                fixRevealer($sections, handleScroll);
+                fixRevealer($sections, handleScroll, direction);
               } else {
                 unfixRevealer($revealer, $sections, handleScroll);  
               }
@@ -79,7 +83,7 @@ const revealer = () => {
               if (!bottom) {
                 unfixRevealer($revealer, $sections, handleScroll);
               } else {
-                fixRevealer($sections, handleScroll);
+                fixRevealer($sections, handleScroll, direction);
               }
             }
           },
