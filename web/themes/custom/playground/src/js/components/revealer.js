@@ -19,65 +19,74 @@ const revealer = () => {
 
     const waypoints = [];
 
-    const bindToRevealer = (element) => {
-      let $revealer = $(element);
-      let $sections = $revealer.find(`[${selector.section}]`);
-      let $first = $sections.first();
-      let height = $first.outerHeight();
+    const getHandleScroll = ($revealer, $sections) => {
+      const height = $sections.first().outerHeight();
 
-      const handleScroll = (e) => {
+      const handleScroll = e => {
         window.requestAnimationFrame(() => {
-          $first.css('max-height', `${height + $revealer[0].getBoundingClientRect().y}px`);
+          $sections.first().css('max-height', `${height + $revealer[0].getBoundingClientRect().y}px`);
         });
       };
+      
+      return  handleScroll;
+    };
 
-      waypoints.push($revealer.waypoint({
-        handler: function(direction) {
-          if ((direction) == 'down') {
-            
-            $sections.each((index, element) => {
-              const $section = $(element);
-              const $wrap = $('<div>').css({ height: $section.outerHeight()});
-              $section.wrap($wrap);
-              $first.find(`[${selector.content}]`).css({ height: height});
-            });
-            $sections.addClass(classes.fixed);
+    const getOffset = bottom => bottom ? 'bottom-in-view': 0;
 
-            $(window).on('scroll', handleScroll);
-          } else {
-            $sections.removeClass(classes.fixed);
+    const unfixRevealer = ($revealer, $sections, handleScroll) => {
+      $sections.removeClass(classes.fixed);
 
-            $sections.unwrap();
+      $sections.unwrap();
 
-            $(window).off('scroll', handleScroll);
-          }
-        }
-      }));
+      $(window).off('scroll', handleScroll);
 
-      waypoints.push($revealer.waypoint({
-        handler: function(direction) {
-          if ((direction) == 'down') {
-            $sections.removeClass(classes.fixed);
+      $sections.each((index, element) => {
+        element.removeAttribute('style');
+      });
+    };
 
-            $sections.unwrap();
+    const fixRevealer = ($sections, handleScroll) => {
+      $sections.each((index, element) => {
+        const $section = $(element);
+        const $wrap = $('<div>').css({ height: $section.outerHeight()});
+        $section.wrap($wrap);
 
-            $(window).off('scroll', handleScroll);
+        const height = $section.outerHeight();
+        $section.find(`[${selector.content}]`).css({ height: height});
+      });
 
-            $first[0].removeAttribute('style');
-          } else {
-            $sections.each((index, element) => {
-              const $section = $(element);
-              const $wrap = $('<div>').css({ height: $section.outerHeight()});
-              
-              $section.wrap($wrap);
-            });
-            $first.css('max-height', `0`)
-            $sections.addClass(classes.fixed);
-            $(window).on('scroll', handleScroll);
-          }
-        },
-        offset: 'bottom-in-view',
-      }));
+      $sections.addClass(classes.fixed);
+
+      $(window).on('scroll', handleScroll);
+    };
+
+    const bindToRevealer = (element) => {
+      const $revealer = $(element);
+      const $sections = $revealer.find(`[${selector.section}]`);
+
+      const handleScroll = getHandleScroll($revealer, $sections);
+
+      [false, true].forEach(bottom => {
+        waypoints.push($revealer.waypoint({
+          handler: function(direction) {
+            if ((direction) == 'down') {
+              if (!bottom) {
+                fixRevealer($sections, handleScroll);
+              } else {
+                unfixRevealer($revealer, $sections, handleScroll);  
+              }
+            } else {
+              if (!bottom) {
+                unfixRevealer($revealer, $sections, handleScroll);
+              } else {
+                fixRevealer($sections, handleScroll);
+              }
+            }
+          },
+          offset: getOffset(bottom)
+        }));
+      });
+
     };
 
     $selections.revealers.once('revealer').each((index, element) => {

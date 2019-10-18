@@ -2,9 +2,9 @@ const grid = () => {
   (function($) {
 
     const selectors = {
-      grid: 'data-tm-grid',
-      slot: 'data-tm-grid-slot',
-      item: 'data-tm-grid-item'
+      grid: 'data-pg-grid',
+      slot: 'data-pg-grid-slot',
+      item: 'data-pg-grid-item'
     };
 
     const $selections = {
