@@ -20,6 +20,16 @@ const scroller = () => {
 
     const waypoints = [];
 
+    const getOffset = ($scroller, $main, $head, bottom = false) => {
+      let offset = ($(window).height() - ($main.outerHeight() + $head.outerHeight())) / 2;
+
+      if(bottom) {
+        offset = -($scroller.outerHeight() - $(window).height()) - offset;
+      }
+
+      return offset;
+    };
+
     const fixScroller = ($scroller, $main, $head, directon) => {
       [$main, $head].forEach($selection => {
         const rect = $selection[0].getBoundingClientRect();
@@ -39,13 +49,16 @@ const scroller = () => {
       });
       
       const $wrap = $('<div>').css({ height: $head.outerHeight() });
-      $head.wrap($wrap);
+
+      if ($head.parent(`[${selector.scroller}]`).length >= 1) {
+        $head.wrap($wrap);
+      }
 
       $scroller.addClass(classes.fixed);
       $scroller.removeClass(classes.finished);
     };
 
-    const unfixScroller = ($scroller, $main, $head, direction) => {
+    const unfixScroller = ($scroller, $main, $head, direction = 'up') => {
       $scroller.removeClass(classes.fixed);
 
       [$main, $head].forEach($selection => {$selection.removeAttr('style')});
@@ -54,10 +67,13 @@ const scroller = () => {
         $scroller.addClass(classes.finished);
         $head.css({bottom: $main.outerHeight()});
       } else {
-        $head.unwrap();
+        $scroller.removeClass(classes.finished);
+        if ($head.parent(`[${selector.scroller}]`).length < 1) {
+          $head.unwrap();
+        }
       }
     };
-
+    
     const updateFixedElement = (element) => {
       const $scroller = $(element);
       const $main = $scroller.find(`[${selector.main}]`);
@@ -74,20 +90,6 @@ const scroller = () => {
       });
     };
 
-    const unbindFromScroller = function(element) {
-      const $scroller = $(element);
-      const $main = $scroller.find(`[${selector.main}]`);
-      const $head = $scroller.find(`[${selector.head}]`);
-  
-      $scroller.removeClass(classes.fixed, classes.finished);
-  
-      if ($head.parent(`[${selector.scroller}]`).length < 1) {
-        $head.unwrap();
-      }
-  
-      [$main, $head].forEach($selection => $selection.removeAttr('style'));
-    }
-
     const bindToScroller = (element) => {
       const $scroller = $(element);
       const $main = $scroller.find(`[${selector.main}]`);
@@ -96,27 +98,26 @@ const scroller = () => {
 
       if ($inset.outerHeight() < $main.outerHeight()) {return;}
 
-      waypoints.push($scroller.waypoint({
-        handler: function(direction) {
-          if(direction == 'down') {
-            fixScroller($scroller, $main, $head, direction);
-          } else {
-            unfixScroller($scroller, $main, $head, direction);
-          }
-        },
-        offset: ($(window).height() - ($main.outerHeight() + $head.outerHeight())) / 2,
-      }));
-
-      waypoints.push($scroller.waypoint({
-        handler: function (direction) {
-          if (direction == 'down') {
-            unfixScroller($scroller, $main, $head, direction);
-          } else {
-            fixScroller($scroller, $main, $head, direction);
-          }
-        },
-        offset: -($scroller.outerHeight() - $(window).height()) - (($(window).height() - ($main.outerHeight() + $head.outerHeight())) / 2),
-      }));
+      [false, true].forEach(bottom => {
+        waypoints.push($scroller.waypoint({
+          handler: function(direction) {
+            if(direction == 'down') {
+              if (!bottom) {
+                fixScroller($scroller, $main, $head, direction);
+              } else {
+                unfixScroller($scroller, $main, $head, direction);
+              }
+            } else {
+              if (!bottom) {
+                unfixScroller($scroller, $main, $head, direction);
+              } else {
+                fixScroller($scroller, $main, $head, direction);
+              }
+            }
+          },
+          offset: getOffset($scroller, $main, $head, bottom),
+        }));
+      });
     }; 
 
     if (!['xs', 'sm'].includes(window.getBreakpoint())) {
@@ -131,7 +132,10 @@ const scroller = () => {
       });
 
       $selections.scrollers.each((index, element) => {
-        unbindFromScroller(element);
+        const $scroller = $(element);
+        const $main = $scroller.find(`[${selector.main}]`);
+        const $head = $scroller.find(`[${selector.head}]`);
+        unfixScroller($scroller, $main, $head);
       });
 
       if (!['xs', 'sm'].includes(e.detail)) {
