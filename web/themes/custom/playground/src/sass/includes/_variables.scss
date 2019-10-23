@@ -1,4 +1,43 @@
 $spacing-margin: 16px;
 
 // Colours
-$colour-cream: #f8f9ef;
+$colours: (
+  cream: #F8F9EF,
+  surf : #53CDD6,
+  sand : #F4D35E,
+  rock : #DADDD8,
+  grass: #CFF27E,
+  earth: #704E2E,
+  slate: #252323,
+  rust:  #F9A03F,
+  blood: #B3001B,
+  ocean: #2176AE,
+);
+
+// Font Sizes
+$font-sizes: (
+  base :     16px,
+  xxxl :     3rem,  // 48px
+  xxl  :     2rem,  // 32px
+  xl   :   1.5rem,  // 24px
+  lg   : 1.125rem,  // 18px
+  md   : 0.875rem,  // 14px
+  sm   :  0.75rem,  // 12px
+  xs   : 0.625rem,  // 10px
+);
+
+// Font families
+$font-families: (
+  display: #{'Pacifico', cursive},
+  sans-serif: #{"Open Sans", Helvetica, sans-serif}
+);
+
+// Line heights
+$line-heights: (
+  small: 1.1,
+  regular: 1.2,
+  large: 1.6,
+);
+
+// Spacing
+$spacing-margin: 1rem;

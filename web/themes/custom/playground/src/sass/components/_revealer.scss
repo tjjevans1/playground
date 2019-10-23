@@ -7,20 +7,20 @@
     position: relative;
 
     &--first {
-      background-color: red;
+      background-color: map-get($colours, surf);
       z-index: 1;
       
       .pg-revealer__text {
-        color: blue;
+        color: map-get($colours, sand);
       }
     }
     
     &--last {
-      background-color: blue;
+      background-color: map-get($colours, sand);
       
   
       .pg-revealer__text  {
-        color: red;
+        color: map-get($colours, surf)
       }
     }
 

@@ -1,0 +1,55 @@
+html {
+  font-size: map-get($font-sizes, base);
+  font-family: map-get($font-families, sans-serif);
+  color: map-get($colours, slate);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: $spacing-margin 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: map-get($font-families, display);
+}
+
+h1 {
+  font-size: map-get($font-sizes, xxxl);
+}
+
+h2 {
+  font-size: map-get($font-sizes, xxl);
+}
+
+h3 {
+  font-size: map-get($font-sizes, xl);
+}
+
+h4 {
+  font-size: map-get($font-sizes, lg);
+}
+
+h5 {
+  font-size: map-get($font-sizes, base);
+}
+
+h6 {
+  font-size: map-get($font-sizes, md);
+}
+
+p {
+  line-height: map-get($line-heights, large);
+
+  a {
+    color: map-get($colours, ocean)
+  }
+}

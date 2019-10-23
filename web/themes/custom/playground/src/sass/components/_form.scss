@@ -1,0 +1,50 @@
+$form-border: 1px solid map-get($colours, rock);
+$form-primary-color: map-get($colours, slate);
+
+.pg-form {
+  &__element {
+    margin: $spacing-margin 0;
+
+    span {
+      display: block;
+    }
+
+    &--toggle {
+      input {
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+        &:checked + .pg-form__toggle:after {
+          transform: translateX(0.9em);
+        }
+
+        &:focus + .pg-form__toggle {
+          box-shadow: 0px 0px 7px 0px map-get($colours, surf);
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    display: inline-flex;
+    width: 2em;
+    border: $form-border;
+    border-radius: 0.5em;
+    position: relative;
+    padding: 0.1em;
+    margin: 0.2rem 0;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      height: 0.8em;
+      width: 0.8em;
+      background-color: $form-primary-color;
+      border-radius: 50%;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+    }
+  }
+}

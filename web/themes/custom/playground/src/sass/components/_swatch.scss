@@ -1,0 +1,19 @@
+.pg-swatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    margin-right: 1rem;
+    height: 6rem;
+    width: 12rem;
+    display: inline-block;
+  }
+
+  @each $colour, $hexref in $colours {
+    &--#{$colour}:before {
+      background-color: $hexref;
+    }
+  }
+}

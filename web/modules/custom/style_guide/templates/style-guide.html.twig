@@ -1,3 +1,86 @@
+<div class="container">
+  <h2>Colours</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <p class="pg-swatch pg-swatch--cream">Cream - #F8F9EF</p>
+      <p class="pg-swatch pg-swatch--rock">Rock - #DADDD8</p>
+      <p class="pg-swatch pg-swatch--sand">Sand - #F4D35E</p>
+      <p class="pg-swatch pg-swatch--surf">Surf - #53CDD6</p>
+      <p class="pg-swatch pg-swatch--grass">Grass - #CFF27E</p>
+    </div>
+    <div class="col-md-6">
+      <p class="pg-swatch pg-swatch--slate">Slate - #252323</p>
+      <p class="pg-swatch pg-swatch--earth">Earth - #704E2E</p>
+      <p class="pg-swatch pg-swatch--rust">Rust - #F9A03F</p>
+      <p class="pg-swatch pg-swatch--ocean">Ocean - #2176AE</p>
+      <p class="pg-swatch pg-swatch--blood">Blood - #B3001B</p>
+    </div>
+  </div>
+  <hr>
+  <h2>Fonts</h2>
+  <h1>Display - Pacifico</h1>
+  <p class="pg-type-display">Pack my box with five dozen liquor jugs</p>
+  <h1 class="pg-type-sans-serif">Sans serif - Arimo</h1>
+  <p>Pack my box with five dozen liquor jugs</p>
+  <hr>
+  <h2>Typography</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+    </div>
+    <div class="col-md-6">
+      <p>Paragraph - Amet proident cillum reprehenderit irure fugiat sit cillum pariatur excepteur excepteur. <a href="">Inline link</a> excepteur ea deserunt mollit ad laboris voluptate ad aliquip amet labore adipisicing. Officia eu non deserunt incididunt eiusmod ipsum ea esse exercitation voluptate dolor ipsum voluptate.</p>
+    </div>
+  </div>
+  <hr>
+  <h2>Forms</h2>
+  <div class="pg-form__element">
+    <label>
+      <span>Text input</span>
+      <input type="text"/>
+    </label>
+  </div>
+  <div class="pg-form__element">
+    <label>
+      <span>Select</span>
+      <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </label>
+  </div>
+  <div class="pg-form__element pg-form__element--checkbox">
+    <label>
+      <span>Checkbox</span>
+      <input type="checkbox"/>
+      <span></span>
+    </label>
+  </div>
+  <div class="pg-form__element pg-form__element--radio">
+    <label>
+      <span>Radio</span>
+      <input type="radio"/>
+      <span></span>
+    </label>
+  </div>
+  <div class="pg-form__element pg-form__element--toggle">
+    {% spaceless %}
+    <label>
+      <span>Toggle</span>
+      <input type="checkbox"/>
+      <div class="pg-form__toggle"></div>
+    </label>
+    {% endspaceless %}
+  </div>
+  <hr>
+  <h2>Components</h2>
+</div>
 <div class="pg-hero">
   <div class="pg-hero__content">
     <h1>Hero</h1>
@@ -49,7 +132,7 @@
         <div class="row pg-scroller__inset-row">
           <div class="col-12">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
@@ -83,16 +166,7 @@
       <div class="pg-grid__column col-lg-4" data-pg-grid-slot>
         <div class="pg-grid__item" data-pg-grid-item>
           <h3 class="pg-grid__title">Grid item 1</h3>
-
-          <div>
-            <a href="">A Comedy About A Bank Robbery</a>
-          </div>
-          <div>
-            <a href="">A Comedy About A Bank Robbery</a>
-          </div>
-          <div>
-            <a href="">A Comedy About A Bank Robbery</a>
-          </div>
+          <p>Ex non Lorem laboris nulla aliquip consequat nostrud magna ullamco aliqua. Irure duis tempor officia magna qui proident tempor enim. Fugiat aute proident exercitation id ea exercitation cupidatat nulla sunt consectetur. Duis amet cillum nostrud qui eu elit ex deserunt aute commodo sit duis consectetur officia.</p>
         </div>
         <div class="pg-grid__item" data-pg-grid-item>
           <h3 class="pg-grid__title">Grid item 2</h3>
@@ -112,7 +186,7 @@
         </div>
         <div class="pg-grid__item" data-pg-grid-item>
           <h3 class="pg-grid__title">Grid item 6</h3>
-          <p></p>
+          <p>Lorem</p>
         </div>
         <div class="pg-grid__item" data-pg-grid-item>
           <h3 class="pg-grid__title">Grid item 7</h3>

@@ -1,7 +1,7 @@
 .pg-hero {
   padding-top: 100%;
   position: relative;
-  background-color: $colour-cream;
+  background-color: map-get($colours, cream);
 
   &__content {
     position: absolute;
