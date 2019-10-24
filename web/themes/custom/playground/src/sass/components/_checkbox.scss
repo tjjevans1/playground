@@ -1,0 +1,38 @@
+.pg-checkbox {
+  display: inline-block;
+  font-size: $form-element-size;
+  border: $form-border;
+  height: 1em;
+  width: 1em;
+  border-radius: 0.1em;
+  position: relative;
+  cursor: pointer;
+  background-color: $form-secondary-colour;
+
+  &:after {
+    content: '\ea10';
+    font-family: map-get($font-families, icons);
+    display: none;
+    position: absolute;
+    line-height: 1;
+    font-size: 0.8em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $form-secondary-colour;
+  }
+}
+
+input {
+  &:checked + .pg-checkbox {
+    background-color: $form-primary-colour;
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &:focus + .pg-checkbox {
+    box-shadow: 0px 0px 7px 0px map-get($colours, surf);
+  }
+}

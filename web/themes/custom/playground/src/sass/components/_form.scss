@@ -1,50 +1,44 @@
-$form-border: 1px solid map-get($colours, rock);
-$form-primary-color: map-get($colours, slate);
-
 .pg-form {
   &__element {
     margin: $spacing-margin 0;
+    display: block;
 
     span {
       display: block;
     }
 
-    &--toggle {
-      input {
-        opacity: 0;
-        height: 0;
-        width: 0;
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select {
+      appearance: none;
+      height: 1.875em;
+      border: $form-border;
+      min-width: 250px;
+      max-width: 100%;
+      background-color: $form-secondary-colour;
+      border-radius: 0.2em;
+      padding: 0.3em;
 
-        &:checked + .pg-form__toggle:after {
-          transform: translateX(0.9em);
-        }
-
-        &:focus + .pg-form__toggle {
-          box-shadow: 0px 0px 7px 0px map-get($colours, surf);
-        }
+      &:focus {
+        outline: none;
+        box-shadow: 0px 0px 7px 0px map-get($colours, surf);
       }
     }
-  }
 
-  &__toggle {
-    display: inline-flex;
-    width: 2em;
-    border: $form-border;
-    border-radius: 0.5em;
-    position: relative;
-    padding: 0.1em;
-    margin: 0.2rem 0;
-    cursor: pointer;
+    select {
+      background-image: url('#{$path-icons}/arrow-down.svg');
+      background-repeat: no-repeat;
+      background-size: 1em 1em;
+      background-position: center right 0.3em;
+      cursor: pointer;
+    }
 
-    &:after {
-      content: '';
-      display: inline-block;
-      height: 0.8em;
-      width: 0.8em;
-      background-color: $form-primary-color;
-      border-radius: 50%;
-      transition: transform 0.3s ease-in-out;
-      position: relative;
+    input[type="checkbox"],
+    input[type="radio"] {
+      opacity: 0;
+      height: 0;
+      width: 0;
     }
   }
 }

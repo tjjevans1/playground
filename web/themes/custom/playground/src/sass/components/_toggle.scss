@@ -1,0 +1,33 @@
+.pg-toggle {
+  font-size: $form-element-size;
+  display: inline-flex;
+  width: 2em;
+  border: $form-border;
+  border-radius: 0.5em;
+  position: relative;
+  padding: 0.1em;
+  margin: 0.2rem 0;
+  background-color: $form-secondary-colour;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    background-color: $form-primary-colour;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+  }
+}
+
+input {
+  &:checked + .pg-toggle:after {
+    transform: translateX(0.9em);
+  }
+  
+  &:focus + .pg-toggle {
+    box-shadow: 0px 0px 7px 0px map-get($colours, surf);
+  }
+}

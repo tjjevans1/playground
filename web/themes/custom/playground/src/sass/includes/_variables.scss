@@ -17,9 +17,10 @@ $colours: (
 // Font Sizes
 $font-sizes: (
   base :     16px,
-  xxxl :     3rem,  // 48px
-  xxl  :     2rem,  // 32px
-  xl   :   1.5rem,  // 24px
+  xxxxl:     3rem,  // 48px
+  xxxl :     2rem,  // 32px
+  xxl  :   1.5rem,  // 24px
+  xl   :  1.25rem,  // 20px
   lg   : 1.125rem,  // 18px
   md   : 0.875rem,  // 14px
   sm   :  0.75rem,  // 12px
@@ -29,7 +30,8 @@ $font-sizes: (
 // Font families
 $font-families: (
   display: #{'Pacifico', cursive},
-  sans-serif: #{"Open Sans", Helvetica, sans-serif}
+  sans-serif: #{"Open Sans", Helvetica, sans-serif},
+  icons: 'icomoon'
 );
 
 // Line heights
@@ -41,3 +43,15 @@ $line-heights: (
 
 // Spacing
 $spacing-margin: 1rem;
+
+// Forms
+$form-border: 1px solid map-get($colours, rock);
+$form-primary-colour: map-get($colours, slate);
+$form-secondary-colour: map-get($colours, cream);
+$form-element-size: map-get($font-sizes, xl);
+
+// Paths
+$path-fonts: '../../fonts';
+$path-images: '../../img';
+$path-icons: '#{$path-images}/icon';
+

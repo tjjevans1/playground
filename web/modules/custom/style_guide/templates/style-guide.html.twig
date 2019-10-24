@@ -38,46 +38,63 @@
     </div>
   </div>
   <hr>
+  <h2>Icons</h2>
+  <span class="pg-icon pg-icon--arrow-up"></span>
+  <span class="pg-icon pg-icon--arrow-down"></span>
+  <span class="pg-icon pg-icon--checkmark"></span>
+  <hr>
   <h2>Forms</h2>
-  <div class="pg-form__element">
-    <label>
-      <span>Text input</span>
-      <input type="text"/>
-    </label>
-  </div>
-  <div class="pg-form__element">
-    <label>
-      <span>Select</span>
-      <select>
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </select>
-    </label>
-  </div>
-  <div class="pg-form__element pg-form__element--checkbox">
-    <label>
-      <span>Checkbox</span>
-      <input type="checkbox"/>
-      <span></span>
-    </label>
-  </div>
-  <div class="pg-form__element pg-form__element--radio">
-    <label>
-      <span>Radio</span>
-      <input type="radio"/>
-      <span></span>
-    </label>
-  </div>
-  <div class="pg-form__element pg-form__element--toggle">
+  <label class="pg-form__element">
+    <span>Text input</span>
+    <input type="text"/>
+  </label>
+  <label class="pg-form__element">
+    <span>Select</span>
+    <select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+  </label>
+  <div class="pg-form__group">
     {% spaceless %}
-    <label>
-      <span>Toggle</span>
-      <input type="checkbox"/>
-      <div class="pg-form__toggle"></div>
-    </label>
+      <label class="pg-form__element">
+        <span>Checkbox</span>
+        <input type="checkbox"/>
+        <div class="pg-checkbox"></div>
+      </label>
+    {% endspaceless %}
+    {% spaceless %}
+      <label class="pg-form__element">
+        <span>Checkbox</span>
+        <input type="checkbox"/>
+        <div class="pg-checkbox"></div>
+      </label>
     {% endspaceless %}
   </div>
+  <div class="pg-form__group">
+    {% spaceless %}
+      <label class="pg-form__element">
+        <span>Radio</span>
+        <input type="radio" name="radios"/>
+        <div class="pg-radio"></div>
+      </label>
+    {% endspaceless %}
+    {% spaceless %}
+      <label class="pg-form__element">
+        <span>Radio</span>
+        <input type="radio" name="radios"/>
+        <div class="pg-radio"></div>
+      </label>
+    {% endspaceless %}
+  </div>
+  {% spaceless %}
+    <label class="pg-form__element">
+      <span>Toggle</span>
+      <input type="checkbox"/>
+      <div class="pg-toggle"></div>
+    </label>
+  {% endspaceless %}
   <hr>
   <h2>Components</h2>
 </div>
