@@ -14,6 +14,12 @@
   background-color: transparent;
 }
 
+// Menu reset. Remove padding and list style from menus
+@mixin menu-reset() {
+  padding-left: 0;
+  list-style: none;
+}
+
 @mixin reset-margin-children {
   & > :first-child {
     margin-top: 0;

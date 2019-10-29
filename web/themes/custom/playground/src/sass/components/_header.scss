@@ -1,0 +1,5 @@
+.pg-header {
+  @include clearfix;
+  background-color: map-get($colours, surf);
+  border-bottom: 4px solid map-get($colours, sand);
+}

@@ -51,3 +51,7 @@
     }
   }
 }
+
+@include media-breakpoint-up(md) {
+  .pg-menu-trigger {display: none;}
+}

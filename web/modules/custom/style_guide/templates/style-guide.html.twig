@@ -1,3 +1,25 @@
+<div class="pg-header">
+  <div class="container">
+    <button class="pg-search-trigger">
+      <span>Search</span>
+    </button>
+    <div class="pg-logo pg-logo--mobile">
+      <a href=""><img src="{{ base_path ~ directory }}/logo.svg"/></a>
+    </div>
+    <button class="pg-menu-trigger">
+      <span>Menu</span>
+    </button>
+    <ul class="pg-menu">
+      <li class="pg-menu__item"><a href="">About</a></li>
+      <li class="pg-menu__item"><a href="">Work</a></li>
+      <div class="pg-logo pg-logo--desktop">
+        <a href=""><img src="{{ base_path ~ directory }}/logo.svg"/></a>
+      </div>
+      <li class="pg-menu__item"><a href="">Blog</a></li>
+      <li class="pg-menu__item"><a href="">Contact</a></li>
+    </ul>
+  </div>  
+</div>
 <div class="container">
   <h2>Colours</h2>
   <div class="row">
@@ -104,12 +126,6 @@
   </div>
 </div>
 <div class="container">
-  <button class="pg-search-trigger">
-    <span>Search</span>
-  </button>
-  <button class="pg-menu-trigger">
-    <span>Menu</span>
-  </button>
   <div class="pg-accordion" data-pg-accordion>
     {% for i in 1..3 %}
       <div class="pg-accordion__slide" data-pg-accordion-slide>

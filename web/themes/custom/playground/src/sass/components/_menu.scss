@@ -1,0 +1,11 @@
+.pg-menu {
+  @include menu-reset;
+  display: flex;
+
+  &__item {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
