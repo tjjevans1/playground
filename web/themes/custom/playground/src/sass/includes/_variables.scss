@@ -1,5 +1,3 @@
-$spacing-margin: 16px;
-
 // Colours
 $colours: (
   cream: #F8F9EF,
@@ -58,5 +56,7 @@ $path-fonts: '../../fonts';
 $path-images: '../../img';
 $path-icons: '#{$path-images}/icon';
 
-
-
+// Layers
+$layer-header: 2;
+$layer-revealer: 1;
+$layer-player: -1;

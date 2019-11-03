@@ -9,7 +9,7 @@
     height: 100vh;
     width: 100vw;
     object-fit: cover;
-    z-index: -1;
+    z-index: $layer-player;
 
     &.is-fixed {
       position: fixed;

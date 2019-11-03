@@ -10,3 +10,31 @@
     align-items: center;
   }
 }
+
+.is-header-fixed {
+  .pg-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: $layer-header;
+  }
+
+  &.toolbar-vertical {
+    .pg-header {
+      top: 39px;
+    }
+  }
+  
+  &.toolbar-horizontal {
+    .pg-header {
+      top: 39px;
+    }
+  
+    &.toolbar-tray-open {
+      .pg-header {
+        top: 79px;
+      }
+    }
+  }
+}

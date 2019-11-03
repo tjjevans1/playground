@@ -11,6 +11,7 @@ import grid from './components/grid.js';
 import revealer from './components/revealer.js';
 import player from './components/player.js';
 import menu from './components/menu.js';
+import header from './components/header.js';
 
 (function (Drupal) {
 
@@ -25,6 +26,7 @@ import menu from './components/menu.js';
       revealer();
       player();
       menu();
+      header();
     },
   };
 

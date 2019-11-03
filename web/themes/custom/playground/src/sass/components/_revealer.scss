@@ -8,7 +8,7 @@
 
     &--first {
       background-color: map-get($colours, surf);
-      z-index: 1;
+      z-index: $layer-revealer;
       
       .pg-revealer__text {
         color: map-get($colours, sand);
