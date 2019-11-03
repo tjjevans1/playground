@@ -10,6 +10,7 @@ import scroller from './components/scroller.js';
 import grid from './components/grid.js';
 import revealer from './components/revealer.js';
 import player from './components/player.js';
+import menu from './components/menu.js';
 
 (function (Drupal) {
 
@@ -23,6 +24,7 @@ import player from './components/player.js';
       grid();
       revealer();
       player();
+      menu();
     },
   };
 

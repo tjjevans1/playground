@@ -12,7 +12,7 @@
     left: 0;
     width: 82%;
     height: 82%;
-    border: 2px solid black;
+    border: 2px solid map-get($colours, cream);
     border-radius: 50%;
     transform-origin: 100% 50%;
     transition: opacity 0.2s linear;
@@ -27,7 +27,7 @@
     height: 2px;
     transform: translate(-50%, -50%) rotate(-45deg);
     transform-origin: 50% 50%;
-    background-color: black;
+    background-color: map-get($colours, cream);
     transition: width 0.2s linear;
   }
 
@@ -39,7 +39,7 @@
     bottom: 0;
     right: 0;
     transform-origin: 100% 50%;
-    background-color: black;
+    background-color: map-get($colours, cream);
     transition: width 0.2s linear;
   }
 
@@ -60,6 +60,6 @@
   }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   .pg-search-trigger {display: none;}
 }

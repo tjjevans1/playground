@@ -41,6 +41,9 @@ $line-heights: (
   large: 1.6,
 );
 
+// Letter Spacing
+$letter-spacing-large: 1.5px;
+
 // Spacing
 $spacing-margin: 1rem;
 
@@ -54,4 +57,6 @@ $form-element-size: map-get($font-sizes, xl);
 $path-fonts: '../../fonts';
 $path-images: '../../img';
 $path-icons: '#{$path-images}/icon';
+
+
 
