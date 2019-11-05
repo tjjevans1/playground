@@ -2,10 +2,6 @@
 
 use Drupal\views\Views;
 
-function playground_preprocess_node(&$variables) {
-
-}
-
 function playground_preprocess_views_view__pages__page_2(&$variables) {
   $view = Views::getView('pages');
   $view->setDisplay('rest_export_1');

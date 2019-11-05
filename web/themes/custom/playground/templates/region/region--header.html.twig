@@ -1,0 +1,14 @@
+{% if content %}
+  <div{{ attributes.addClass('pg-header js-pg-header') }}>
+    <div class="container pg-header__container">
+      <button class="pg-search-trigger">
+        <span>Search</span>
+      </button>
+        {{ elements.playground_branding }}
+      <button class="pg-menu-trigger js-pg-menu-trigger">
+        <span>Menu</span>
+      </button>
+      {{ elements.playground_main_menu }}
+    </div>
+  </div>
+{% endif %}
