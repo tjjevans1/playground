@@ -20,13 +20,13 @@ import header from './components/header.js';
       // Utils
       breakpoints();
 
+      header();
       accordion();
       scroller();
       grid();
       revealer();
       player();
       menu();
-      header();
     },
   };
 

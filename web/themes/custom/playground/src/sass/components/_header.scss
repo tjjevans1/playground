@@ -20,20 +20,22 @@
     z-index: $layer-header;
   }
 
-  &.toolbar-vertical {
-    .pg-header {
-      top: 39px;
-    }
-  }
-  
-  &.toolbar-horizontal {
-    .pg-header {
-      top: 39px;
-    }
-  
-    &.toolbar-tray-open {
+  &.toolbar-fixed {
+    &.toolbar-vertical {
       .pg-header {
-        top: 79px;
+        top: 39px;
+      }
+    }
+    
+    &.toolbar-horizontal {
+      .pg-header {
+        top: 39px;
+      }
+      
+      &.toolbar-tray-open {
+        .pg-header {
+          top: 79px;
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
 .pg-logo {
   img {
-    max-width: 70px;
+    max-width: 50px;
   }
 
   &--desktop {
@@ -11,7 +11,7 @@
 @include media-breakpoint-up(lg) {
   .pg-logo {
     img {
-      max-width: 150px;
+      max-width: 90px;
     }
 
     &--mobile {

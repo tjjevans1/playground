@@ -2,7 +2,7 @@
   @include menu-reset;
   margin: 0;
   position: fixed;
-  top: 92px;
+  top: 77px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -21,7 +21,7 @@
     position: relative;
     
     & ~ .pg-menu__item {
-      border-top: 2px solid map-get($colours, cream);
+      border-top: 4px solid map-get($colours, sand);
     }
 
     &:hover {
@@ -54,12 +54,6 @@
   }
 }
 
-.toolbar-vertical {
-  .pg-menu {
-    top: 131px;
-  }
-}
-
 .toolbar-horizontal {
   .pg-menu {
     top: 131px;
@@ -72,8 +66,12 @@
   }
 }
 
-.is-menu-active .pg-menu {
-  transform: none;
+.is-menu-active {
+  overflow: hidden;
+
+  .pg-menu {
+    transform: none;
+  }
 }
 
 @include media-breakpoint-up(lg) {

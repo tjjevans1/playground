@@ -4,6 +4,7 @@ const header = () => {
   (function ($) {
     const selectors = {
       header: 'js-pg-header',
+      wrap: 'js-pg-wrap',
     };
 
     const $selections = {
@@ -12,26 +13,31 @@ const header = () => {
     };
 
     const classes = {
-      headerFixed: 'is-header-fixed'
+      headerFixed: 'is-header-fixed',
+      toolbarFixed: 'toolbar-fixed'
     };
 
     const waypoints = [];
     
     const getOffset = () => {
-      const offset = parseInt($selections.body.css('padding-top'), 10);
-      console.log(offset);
+      let offset = 0;
+
+      if ($selections.body.hasClass(classes.toolbarFixed)) {
+        offset += parseInt($selections.body.css('padding-top'), 10);
+      }
+      
       return offset;
     };
 
     const bindToHeader = (element) => {
       const $header = $(element);
       
-      const $wrap = $('<div>').css({
-        height: $header.outerHeight()
-      });
-
       $selections.body.removeClass(classes.headerFixed);
-      $header.unwrap();
+      $header.unwrap(`.${selectors.wrap}`);
+
+      const $wrap = $('<div>')
+        .css({height: $header.outerHeight()})
+        .addClass(selectors.wrap);
       
       waypoints.push($header.waypoint({
         handler: function(direction) {
@@ -40,14 +46,14 @@ const header = () => {
             $selections.body.addClass(classes.headerFixed);
           } else {
             $selections.body.removeClass(classes.headerFixed);
-            $selections.header.unwrap();
+            $selections.header.unwrap(`.${selectors.wrap}`);
           };
         },
         offset: getOffset()
       }));
     };
 
-    $selections.header.each((index, element) => {
+    $selections.header.once().each((index, element) => {
       bindToHeader(element);
     });
 
