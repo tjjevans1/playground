@@ -12,6 +12,7 @@ import revealer from './components/revealer.js';
 import player from './components/player.js';
 import menu from './components/menu.js';
 import header from './components/header.js';
+import homepageGl from './components/homepage-gl.js';
 
 (function (Drupal) {
 
@@ -27,6 +28,7 @@ import header from './components/header.js';
       revealer();
       player();
       menu();
+      homepageGl();
     },
   };
 
