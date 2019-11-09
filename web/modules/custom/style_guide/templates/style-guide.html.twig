@@ -1,233 +1,237 @@
-<div class="pg-header js-pg-header">
-  <div class="container pg-header__container">
-    <button class="pg-search-trigger">
-      <span>Search</span>
-    </button>
-    <div class="pg-logo pg-logo--mobile">
-      <a href=""><img src="{{ base_path ~ directory }}/logo.svg"/></a>
-    </div>
-    <button class="pg-menu-trigger js-pg-menu-trigger">
-      <span>Menu</span>
-    </button>
-    <ul class="pg-menu">
-      <li class="pg-menu__item"><a href="">About</a></li>
-      <li class="pg-menu__item"><a href="">Work</a></li>
-      <div class="pg-logo pg-logo--desktop">
+<div class="pg-page">
+  <div class="pg-header js-pg-header">
+    <div class="container pg-header__container">
+      <button class="pg-search-trigger">
+        <span>Search</span>
+      </button>
+      <div class="pg-logo pg-logo--mobile">
         <a href=""><img src="{{ base_path ~ directory }}/logo.svg"/></a>
       </div>
-      <li class="pg-menu__item"><a href="">Blog</a></li>
-      <li class="pg-menu__item"><a href="">Contact</a></li>
-    </ul>
-  </div>  
-</div>
-<div class="container">
-  <h2>Colours</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <p class="pg-swatch pg-swatch--cream">Cream - #F8F9EF</p>
-      <p class="pg-swatch pg-swatch--rock">Rock - #DADDD8</p>
-      <p class="pg-swatch pg-swatch--sand">Sand - #F4D35E</p>
-      <p class="pg-swatch pg-swatch--surf">Surf - #53CDD6</p>
-      <p class="pg-swatch pg-swatch--grass">Grass - #CFF27E</p>
-    </div>
-    <div class="col-md-6">
-      <p class="pg-swatch pg-swatch--slate">Slate - #252323</p>
-      <p class="pg-swatch pg-swatch--earth">Earth - #704E2E</p>
-      <p class="pg-swatch pg-swatch--rust">Rust - #F9A03F</p>
-      <p class="pg-swatch pg-swatch--ocean">Ocean - #2176AE</p>
-      <p class="pg-swatch pg-swatch--blood">Blood - #B3001B</p>
-    </div>
+      <button class="pg-menu-trigger js-pg-menu-trigger">
+        <span>Menu</span>
+      </button>
+      <ul class="pg-menu">
+        <li class="pg-menu__item"><a href="">About</a></li>
+        <li class="pg-menu__item"><a href="">Work</a></li>
+        <div class="pg-logo pg-logo--desktop">
+          <a href=""><img src="{{ base_path ~ directory }}/logo.svg"/></a>
+        </div>
+        <li class="pg-menu__item"><a href="">Blog</a></li>
+        <li class="pg-menu__item"><a href="">Contact</a></li>
+      </ul>
+    </div>  
   </div>
-  <hr>
-  <h2>Fonts</h2>
-  <h1>Display - Pacifico</h1>
-  <p class="pg-type-display">Pack my box with five dozen liquor jugs</p>
-  <h1 class="pg-type-sans-serif">Sans serif - Arimo</h1>
-  <p>Pack my box with five dozen liquor jugs</p>
-  <hr>
-  <h2>Typography</h2>
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Heading 1</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h3>
-      <h4>Heading 4</h4>
-      <h5>Heading 5</h5>
-      <h6>Heading 6</h6>
-    </div>
-    <div class="col-md-6">
-      <p>Paragraph - Amet proident cillum reprehenderit irure fugiat sit cillum pariatur excepteur excepteur. <a href="">Inline link</a> excepteur ea deserunt mollit ad laboris voluptate ad aliquip amet labore adipisicing. Officia eu non deserunt incididunt eiusmod ipsum ea esse exercitation voluptate dolor ipsum voluptate.</p>
-    </div>
-  </div>
-  <hr>
-  <h2>Icons</h2>
-  <span class="pg-icon pg-icon--arrow-up"></span>
-  <span class="pg-icon pg-icon--arrow-down"></span>
-  <span class="pg-icon pg-icon--checkmark"></span>
-  <hr>
-  <h2>Forms</h2>
-  <label class="pg-form__element">
-    <span>Text input</span>
-    <input type="text"/>
-  </label>
-  <label class="pg-form__element">
-    <span>Select</span>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
-  </label>
-  <div class="pg-form__group">
-    {% spaceless %}
-      <label class="pg-form__element">
-        <span>Checkbox</span>
-        <input type="checkbox"/>
-        <div class="pg-checkbox"></div>
-      </label>
-    {% endspaceless %}
-    {% spaceless %}
-      <label class="pg-form__element">
-        <span>Checkbox</span>
-        <input type="checkbox"/>
-        <div class="pg-checkbox"></div>
-      </label>
-    {% endspaceless %}
-  </div>
-  <div class="pg-form__group">
-    {% spaceless %}
-      <label class="pg-form__element">
-        <span>Radio</span>
-        <input type="radio" name="radios"/>
-        <div class="pg-radio"></div>
-      </label>
-    {% endspaceless %}
-    {% spaceless %}
-      <label class="pg-form__element">
-        <span>Radio</span>
-        <input type="radio" name="radios"/>
-        <div class="pg-radio"></div>
-      </label>
-    {% endspaceless %}
-  </div>
-  {% spaceless %}
-    <label class="pg-form__element">
-      <span>Toggle</span>
-      <input type="checkbox"/>
-      <div class="pg-toggle"></div>
-    </label>
-  {% endspaceless %}
-  <hr>
-  <h2>Components</h2>
-</div>
-<div class="pg-hero">
-  <div class="pg-hero__content">
-    <h1>Hero</h1>
-  </div>
-</div>
-<div class="container">
-  <div class="pg-accordion" data-pg-accordion>
-    {% for i in 1..3 %}
-      <div class="pg-accordion__slide" data-pg-accordion-slide>
-        <h1>Accordion Item {{ i }} Title</h1>
-        <div class="pg-accordion__content" data-pg-accordion-content>
-          <p>Accordion Item {{ i }} content</p>
+  <div class="pg-page__main">
+    <div class="container">
+      <h2>Colours</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="pg-swatch pg-swatch--cream">Cream - #F8F9EF</p>
+          <p class="pg-swatch pg-swatch--rock">Rock - #DADDD8</p>
+          <p class="pg-swatch pg-swatch--sand">Sand - #F4D35E</p>
+          <p class="pg-swatch pg-swatch--surf">Surf - #53CDD6</p>
+          <p class="pg-swatch pg-swatch--grass">Grass - #CFF27E</p>
+        </div>
+        <div class="col-md-6">
+          <p class="pg-swatch pg-swatch--slate">Slate - #252323</p>
+          <p class="pg-swatch pg-swatch--earth">Earth - #704E2E</p>
+          <p class="pg-swatch pg-swatch--rust">Rust - #F9A03F</p>
+          <p class="pg-swatch pg-swatch--ocean">Ocean - #2176AE</p>
+          <p class="pg-swatch pg-swatch--blood">Blood - #B3001B</p>
         </div>
       </div>
-    {% endfor %}
-  </div>
-</div>
-<div class="pg-player" data-pg-player>
-  <video class="pg-player__video" data-pg-player-video muted>
-    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-  </video>
-  <div class="pg-player__content">
-    <div class="container">
-      <h1 style="margin: 400px 0">Content</h1>
-      <h1 style="margin: 400px 0">Content</h1>
-      <h1 style="margin: 400px 0">Content</h1>
-      <h1 style="margin: 400px 0">Content</h1>
-      <h1 style="margin: 400px 0">Content</h1>
-      <h1 style="margin: 400px 0">Content</h1>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="pg-scroller" data-pg-scroller>
-    <div class="pg-scroller__head" data-pg-scroller-head>
-      <h2>Title</h2>
-    </div>
-    <div class="row pg-scroller__row">
-      <div class="col-md-6 pg-scroller__main" data-pg-scroller-main>
-        <h2>Pinned content</h2>
+      <hr>
+      <h2>Fonts</h2>
+      <h1>Display - Pacifico</h1>
+      <p class="pg-type-display">Pack my box with five dozen liquor jugs</p>
+      <h1 class="pg-type-sans-serif">Sans serif - Arimo</h1>
+      <p>Pack my box with five dozen liquor jugs</p>
+      <hr>
+      <h2>Typography</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5</h5>
+          <h6>Heading 6</h6>
+        </div>
+        <div class="col-md-6">
+          <p>Paragraph - Amet proident cillum reprehenderit irure fugiat sit cillum pariatur excepteur excepteur. <a href="">Inline link</a> excepteur ea deserunt mollit ad laboris voluptate ad aliquip amet labore adipisicing. Officia eu non deserunt incididunt eiusmod ipsum ea esse exercitation voluptate dolor ipsum voluptate.</p>
+        </div>
       </div>
-      <div class="col-md-6 pg-scroller__inset" data-pg-scroller-inset>
-        <div class="row pg-scroller__inset-row">
-          <div class="col-12">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+      <hr>
+      <h2>Icons</h2>
+      <span class="pg-icon pg-icon--arrow-up"></span>
+      <span class="pg-icon pg-icon--arrow-down"></span>
+      <span class="pg-icon pg-icon--checkmark"></span>
+      <hr>
+      <h2>Forms</h2>
+      <label class="pg-form__element">
+        <span>Text input</span>
+        <input type="text"/>
+      </label>
+      <label class="pg-form__element">
+        <span>Select</span>
+        <select>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </label>
+      <div class="pg-form__group">
+        {% spaceless %}
+          <label class="pg-form__element">
+            <span>Checkbox</span>
+            <input type="checkbox"/>
+            <div class="pg-checkbox"></div>
+          </label>
+        {% endspaceless %}
+        {% spaceless %}
+          <label class="pg-form__element">
+            <span>Checkbox</span>
+            <input type="checkbox"/>
+            <div class="pg-checkbox"></div>
+          </label>
+        {% endspaceless %}
+      </div>
+      <div class="pg-form__group">
+        {% spaceless %}
+          <label class="pg-form__element">
+            <span>Radio</span>
+            <input type="radio" name="radios"/>
+            <div class="pg-radio"></div>
+          </label>
+        {% endspaceless %}
+        {% spaceless %}
+          <label class="pg-form__element">
+            <span>Radio</span>
+            <input type="radio" name="radios"/>
+            <div class="pg-radio"></div>
+          </label>
+        {% endspaceless %}
+      </div>
+      {% spaceless %}
+        <label class="pg-form__element">
+          <span>Toggle</span>
+          <input type="checkbox"/>
+          <div class="pg-toggle"></div>
+        </label>
+      {% endspaceless %}
+      <hr>
+      <h2>Components</h2>
+    </div>
+    <div class="pg-hero">
+      <div class="pg-hero__content">
+        <h1>Hero</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="pg-accordion" data-pg-accordion>
+        {% for i in 1..3 %}
+          <div class="pg-accordion__slide" data-pg-accordion-slide>
+            <h1>Accordion Item {{ i }} Title</h1>
+            <div class="pg-accordion__content" data-pg-accordion-content>
+              <p>Accordion Item {{ i }} content</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="pg-player" data-pg-player>
+      <video class="pg-player__video" data-pg-player-video muted>
+        <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+      </video>
+      <div class="pg-player__content">
+        <div class="container">
+          <h1 style="margin: 400px 0">Content</h1>
+          <h1 style="margin: 400px 0">Content</h1>
+          <h1 style="margin: 400px 0">Content</h1>
+          <h1 style="margin: 400px 0">Content</h1>
+          <h1 style="margin: 400px 0">Content</h1>
+          <h1 style="margin: 400px 0">Content</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="pg-scroller" data-pg-scroller>
+        <div class="pg-scroller__head" data-pg-scroller-head>
+          <h2>Title</h2>
+        </div>
+        <div class="row pg-scroller__row">
+          <div class="col-md-6 pg-scroller__main" data-pg-scroller-main>
+            <h2>Pinned content</h2>
+          </div>
+          <div class="col-md-6 pg-scroller__inset" data-pg-scroller-inset>
+            <div class="row pg-scroller__inset-row">
+              <div class="col-12">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa incidunt voluptate, suscipit quibusdam labore aliquid non sunt saepe nisi impedit corrupti debitis esse id explicabo reiciendis rem tenetur iusto porro.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="pg-revealer" data-pg-revealer>
-  <div class="pg-revealer__section pg-revealer__section--first" data-pg-revealer-section>
-    <div class="pg-revealer__content" data-pg-revealer-content>
-      <p class="pg-revealer__text" data-pg-revealer-text>Text<br>text<br>text<br>text<br>text<br>text</p>
-    </div>
-  </div>
-  <div class="pg-revealer__section pg-revealer__section--last" data-pg-revealer-section>
-    <div class="pg-revealer__content" data-pg-revealer-content>
-      <p class="pg-revealer__text" data-pg-revealer-text>Text<br>text<br>text<br>text<br>text<br>text</p>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="pg-grid" data-pg-grid>
-    <div class="row">
-      <div class="pg-grid__column col-lg-4" data-pg-grid-slot>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 1</h3>
-          <p>Ex non Lorem laboris nulla aliquip consequat nostrud magna ullamco aliqua. Irure duis tempor officia magna qui proident tempor enim. Fugiat aute proident exercitation id ea exercitation cupidatat nulla sunt consectetur. Duis amet cillum nostrud qui eu elit ex deserunt aute commodo sit duis consectetur officia.</p>
-        </div>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu.</p>
-        </div>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci.</p>
-        </div>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 4</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci.</p>
-        </div>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 5</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 6</h3>
-          <p>Lorem</p>
-        </div>
-        <div class="pg-grid__item" data-pg-grid-item>
-          <h3 class="pg-grid__title">Grid item 7</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci.</p>
+    <div class="pg-revealer" data-pg-revealer>
+      <div class="pg-revealer__section pg-revealer__section--first" data-pg-revealer-section>
+        <div class="pg-revealer__content" data-pg-revealer-content>
+          <p class="pg-revealer__text" data-pg-revealer-text>Text<br>text<br>text<br>text<br>text<br>text</p>
         </div>
       </div>
-      <div class="pg-grid__column col-lg-4" data-pg-grid-slot></div>
-      <div class="pg-grid__column col-lg-4" data-pg-grid-slot></div>
+      <div class="pg-revealer__section pg-revealer__section--last" data-pg-revealer-section>
+        <div class="pg-revealer__content" data-pg-revealer-content>
+          <p class="pg-revealer__text" data-pg-revealer-text>Text<br>text<br>text<br>text<br>text<br>text</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="pg-grid" data-pg-grid>
+        <div class="row">
+          <div class="pg-grid__column col-lg-4" data-pg-grid-slot>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 1</h3>
+              <p>Ex non Lorem laboris nulla aliquip consequat nostrud magna ullamco aliqua. Irure duis tempor officia magna qui proident tempor enim. Fugiat aute proident exercitation id ea exercitation cupidatat nulla sunt consectetur. Duis amet cillum nostrud qui eu elit ex deserunt aute commodo sit duis consectetur officia.</p>
+            </div>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu.</p>
+            </div>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci.</p>
+            </div>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci.</p>
+            </div>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 5</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 6</h3>
+              <p>Lorem</p>
+            </div>
+            <div class="pg-grid__item" data-pg-grid-item>
+              <h3 class="pg-grid__title">Grid item 7</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui ante, laoreet nec posuere id, luctus et elit. Sed et molestie nulla, eu posuere est. Aenean purus mi, consectetur vitae porta in, convallis sit amet arcu. Maecenas blandit justo ipsum, quis malesuada nunc ultrices eget. Praesent ipsum tortor, tincidunt at odio a, aliquet convallis ante. Donec pellentesque lacinia nibh, ut luctus erat cursus porta. Duis et felis efficitur, ultricies turpis et, sollicitudin orci.</p>
+            </div>
+          </div>
+          <div class="pg-grid__column col-lg-4" data-pg-grid-slot></div>
+          <div class="pg-grid__column col-lg-4" data-pg-grid-slot></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
