@@ -4,3 +4,10 @@ style_guide.home:
     _controller: 'Drupal\style_guide\Controller\StyleGuideController::home'
   requirements:
     _role: 'authenticated'
+
+style_guide.webGl:
+  path: '/style-guide/webgl'
+  defaults:
+    _controller: 'Drupal\style_guide\Controller\StyleGuideController::webGl'
+  requirements:
+    _role: 'authenticated'

@@ -10,4 +10,10 @@ class StyleGuideController extends ControllerBase {
       '#theme' => 'style_guide',
     ];
   }
+
+  public function webGl() {
+    return [
+      '#theme' => 'style_guide__web_gl',
+    ];
+  }
 }

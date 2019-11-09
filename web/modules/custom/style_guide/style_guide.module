@@ -7,6 +7,9 @@ function style_guide_theme($existing, $type, $theme, $path) {
     ],
     'style_guide' => [
       'variables' => [],
-    ]
+    ],
+    'style_guide__web_gl' => [
+      'variables' => [],
+    ],
   ];
 }
