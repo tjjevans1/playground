@@ -252,8 +252,13 @@ const homepageGl = () => {
       // Initialize the GL context
       const gl = canvas.getContext("webgl");
 
+      if (!gl) {
+        console.log('WebGL not supported, falling back on experimental-webgl');
+        gl = canvas.getContext('experimental-webgl');
+      }
+
       // Only continue if WebGL is available and working
-      if (gl === null) {
+      if (!gl) {
         alert("Unable to initialize WebGL. Your browser or machine may not support it.");
         return;
       }
