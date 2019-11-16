@@ -1,0 +1,10 @@
+.pg-footer {
+  background-color: map-get($colours, slate);
+  padding: 1rem 0;
+  color: map-get($colours, cream);
+
+  p a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
