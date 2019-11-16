@@ -2,9 +2,20 @@
   background-color: map-get($colours, slate);
   padding: 1rem 0;
   color: map-get($colours, cream);
+  text-align: center;
 
   p a {
     color: inherit;
     text-decoration: none;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .pg-footer {
+    text-align: left;
+
+    p {
+      text-align: right;
+    }
   }
 }
