@@ -9,17 +9,16 @@
     &--first {
       background-color: map-get($colours, surf);
       z-index: $layer-revealer;
-      
+
       .pg-revealer__text {
         color: map-get($colours, sand);
       }
     }
-    
+
     &--last {
       background-color: map-get($colours, sand);
-      
-  
-      .pg-revealer__text  {
+
+      .pg-revealer__text {
         color: map-get($colours, surf);
       }
     }

@@ -7,7 +7,7 @@
   left: 0;
   width: 100%;
   z-index: 1;
-  background-color: map-get($colours , surf);
+  background-color: map-get($colours, surf);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    
+
     & ~ .pg-menu__item {
       border-top: 4px solid map-get($colours, sand);
     }
@@ -43,7 +43,7 @@
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;

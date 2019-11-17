@@ -8,14 +8,15 @@
   &:before,
   &:after,
   span {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     background-color: map-get($colours, cream);
     height: 2px;
     left: 0;
     display: inline-block;
-    transition: opacity 0.2s linear, transform 0.2s linear, top 0.2s linear, bottom 0.2s linear;
+    transition: opacity 0.2s linear, transform 0.2s linear, top 0.2s linear,
+      bottom 0.2s linear;
     transform-origin: 50% 50%;
   }
 
@@ -31,11 +32,10 @@
   &:after {
     bottom: 0;
   }
-
 }
 .is-menu-active .pg-menu-trigger {
   outline: none;
-  
+
   span {
     opacity: 0;
   }
@@ -52,5 +52,7 @@
 }
 
 @include media-breakpoint-up(lg) {
-  .pg-menu-trigger {display: none;}
+  .pg-menu-trigger {
+    display: none;
+  }
 }

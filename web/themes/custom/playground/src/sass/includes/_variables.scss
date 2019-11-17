@@ -1,42 +1,53 @@
 // Colours
 $colours: (
-  cream: #F8F9EF,
-  surf : #53CDD6,
-  sand : #F4D35E,
-  rock : #DADDD8,
-  grass: #CFF27E,
-  earth: #704E2E,
+  cream: #f8f9ef,
+  surf: #53cdd6,
+  sand: #f4d35e,
+  rock: #daddd8,
+  grass: #cff27e,
+  earth: #704e2e,
   slate: #252323,
-  rust:  #F9A03F,
-  blood: #B3001B,
-  ocean: #2176AE,
+  rust: #f9a03f,
+  blood: #b3001b,
+  ocean: #2176ae
 );
 
 // Font Sizes
 $font-sizes: (
-  base :     16px,
-  xxxxl:     3rem,  // 48px
-  xxxl :     2rem,  // 32px
-  xxl  :   1.5rem,  // 24px
-  xl   :  1.25rem,  // 20px
-  lg   : 1.125rem,  // 18px
-  md   : 0.875rem,  // 14px
-  sm   :  0.75rem,  // 12px
-  xs   : 0.625rem,  // 10px
+  base: 16px,
+  xxxxl: 3rem,
+  // 48px
+    xxxl: 2rem,
+  // 32px
+    xxl: 1.5rem,
+  // 24px
+    xl: 1.25rem,
+  // 20px
+    lg: 1.125rem,
+  // 18px
+    md: 0.875rem,
+  // 14px
+    sm: 0.75rem,
+  // 12px
+    xs: 0.625rem,
+  // 10px
 );
 
 // Font families
 $font-families: (
-  display: #{'Pacifico', cursive},
-  sans-serif: #{"Open Sans", Helvetica, sans-serif},
-  icons: 'icomoon'
+  display: #{"Pacifico",
+  cursive},
+  sans-serif: #{"Open Sans",
+  Helvetica,
+  sans-serif},
+  icons: "icomoon"
 );
 
 // Line heights
 $line-heights: (
   small: 1.1,
   regular: 1.2,
-  large: 1.6,
+  large: 1.6
 );
 
 // Letter Spacing
@@ -52,9 +63,9 @@ $form-secondary-colour: map-get($colours, cream);
 $form-element-size: map-get($font-sizes, xl);
 
 // Paths
-$path-fonts: '../../fonts';
-$path-images: '../../img';
-$path-icons: '#{$path-images}/icon';
+$path-fonts: "../../fonts";
+$path-images: "../../img";
+$path-icons: "#{$path-images}/icon";
 
 // Layers
 $layer-header: 2;

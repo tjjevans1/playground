@@ -1,17 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import Filter from '../Filter/Filter';
+import Filter from "../Filter/Filter";
 
-function FilterGroup (props) {
+function FilterGroup(props) {
   return (
     <div>
       {props.filters.map((filter, key) => {
-        return (
-          <Filter 
-            filter={filter} 
-            key={key}
-            />
-        );
+        return <Filter filter={filter} key={key} />;
       })}
     </div>
   );

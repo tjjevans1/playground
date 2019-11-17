@@ -1,7 +1,7 @@
 .pg-player {
   @include clearfix;
   position: relative;
-  
+
   &__video {
     position: absolute;
     top: 0;

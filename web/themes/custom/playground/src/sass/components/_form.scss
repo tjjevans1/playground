@@ -27,7 +27,7 @@
     }
 
     select {
-      background-image: url('#{$path-icons}/arrow-down.svg');
+      background-image: url("#{$path-icons}/arrow-down.svg");
       background-repeat: no-repeat;
       background-size: 1em 1em;
       background-position: center right 0.3em;

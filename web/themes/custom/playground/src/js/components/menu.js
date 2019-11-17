@@ -1,22 +1,22 @@
 const menu = () => {
-  (function ($) {
+  (function($) {
     const selectors = {
-      menu: 'js-pg-menu-trigger',
+      menu: "js-pg-menu-trigger"
     };
 
     const $selections = {
       menuTrigger: $(`.${selectors.menu}`),
-      body: $('body'),
+      body: $("body")
     };
 
     const classes = {
-      menuActive: 'is-menu-active'
+      menuActive: "is-menu-active"
     };
 
-    const bindToMenuTrigger = (element) => {
+    const bindToMenuTrigger = element => {
       const $trigger = $(element);
 
-      $trigger.click((e) => {
+      $trigger.click(e => {
         $selections.body.toggleClass(classes.menuActive);
       });
     };
@@ -24,7 +24,6 @@ const menu = () => {
     $selections.menuTrigger.once().each((index, element) => {
       bindToMenuTrigger(element);
     });
-
   })(jQuery);
 };
 

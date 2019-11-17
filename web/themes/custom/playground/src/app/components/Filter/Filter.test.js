@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Filter } from './FilterGroup';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Filter } from "./FilterGroup";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
+it("renders without crashing", () => {
+  const div = document.createElement("div");
   ReactDOM.render(<Filter />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

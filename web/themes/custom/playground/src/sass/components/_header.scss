@@ -3,7 +3,7 @@
   background-color: map-get($colours, surf);
   border-bottom: 4px solid map-get($colours, sand);
   padding: $spacing-margin 0;
-  
+
   &__container {
     display: flex;
     justify-content: space-between;
@@ -26,12 +26,12 @@
         top: 39px;
       }
     }
-    
+
     &.toolbar-horizontal {
       .pg-header {
         top: 39px;
       }
-      
+
       &.toolbar-tray-open {
         .pg-header {
           top: 79px;

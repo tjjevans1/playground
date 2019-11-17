@@ -1,10 +1,10 @@
-import 'waypoints/lib/jquery.waypoints.min.js';
+import "waypoints/lib/jquery.waypoints.min.js";
 
 const player = () => {
   (function($) {
     const selector = {
-      player: 'data-pg-player',
-      video: 'data-pg-player-video',
+      player: "data-pg-player",
+      video: "data-pg-player-video"
     };
 
     const $selections = {
@@ -12,8 +12,8 @@ const player = () => {
     };
 
     const classes = {
-      fixed: 'is-fixed',
-      finished: 'is-finished'
+      fixed: "is-fixed",
+      finished: "is-finished"
     };
 
     const waypoints = [];
@@ -23,7 +23,7 @@ const player = () => {
       let time = 0;
 
       if (distance > 0) {
-         time = distance * rate;
+        time = distance * rate;
       }
 
       $video[0].currentTime = time;
@@ -31,70 +31,72 @@ const player = () => {
 
     const getHandleScroll = ($player, $video) => {
       // rate in seconds per pixel scrolled
-      let rate = $video[0].duration/$player.outerHeight();
+      let rate = $video[0].duration / $player.outerHeight();
 
       const handleScroll = e => {
         window.requestAnimationFrame(() => {
           updateVideo($player, $video, rate);
         });
       };
-      
-      return  handleScroll;
+
+      return handleScroll;
     };
 
-    const getOffset = bottom => bottom ? 'bottom-in-view': 0;
+    const getOffset = bottom => (bottom ? "bottom-in-view" : 0);
 
     const unfixPlayer = ($video, handleScroll, direction) => {
-      if (direction === 'down') {
+      if (direction === "down") {
         $video.addClass(classes.finished);
-      } 
-      
+      }
+
       $video.removeClass(classes.fixed);
 
-      $(window).off('scroll', handleScroll);
+      $(window).off("scroll", handleScroll);
     };
 
     const fixPlayer = ($video, handleScroll, direction) => {
       $video.removeClass(classes.finished);
       $video.addClass(classes.fixed);
 
-      $(window).on('scroll', handleScroll);
+      $(window).on("scroll", handleScroll);
     };
 
-    const bindToPlayer = (element) => {
+    const bindToPlayer = element => {
       const $player = $(element);
       const $video = $player.find(`[${selector.video}]`);
 
-      $video.on('loadedmetadata', e => {
+      $video.on("loadedmetadata", e => {
         const handleScroll = getHandleScroll($player, $video);
-        
+
         [false, true].forEach(bottom => {
-          waypoints.push($player.waypoint({
-            handler: function(direction) {
-              if ((direction) == 'down') {
-                if (!bottom) {
-                  fixPlayer($video, handleScroll, direction);
+          waypoints.push(
+            $player.waypoint({
+              handler: function(direction) {
+                if (direction == "down") {
+                  if (!bottom) {
+                    fixPlayer($video, handleScroll, direction);
+                  } else {
+                    unfixPlayer($video, handleScroll, direction);
+                  }
                 } else {
-                  unfixPlayer($video, handleScroll, direction);
+                  if (!bottom) {
+                    unfixPlayer($video, handleScroll, direction);
+                  } else {
+                    fixPlayer($video, handleScroll, direction);
+                  }
                 }
-              } else {
-                if (!bottom) {
-                  unfixPlayer($video, handleScroll, direction);
-                } else {
-                  fixPlayer($video, handleScroll, direction);
-                }
-              }
-            },
-            offset: getOffset(bottom)
-          }));
+              },
+              offset: getOffset(bottom)
+            })
+          );
         });
       });
     };
 
-    $selections.players.once('player').each((index, element) => {
+    $selections.players.once("player").each((index, element) => {
       bindToPlayer(element);
     });
   })(jQuery);
-}
+};
 
 export default player;

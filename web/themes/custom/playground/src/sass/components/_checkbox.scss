@@ -10,7 +10,7 @@
   background-color: $form-secondary-colour;
 
   &:after {
-    content: '\ea10';
+    content: "\ea10";
     font-family: map-get($font-families, icons);
     display: none;
     position: absolute;
