@@ -1,0 +1,23 @@
+uuid: 48d52804-f1ac-4caf-a23b-e4d8dfc682a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - playground
+id: sitebranding
+theme: playground
+region: footer
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

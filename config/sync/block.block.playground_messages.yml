@@ -11,7 +11,7 @@ _core:
 id: playground_messages
 theme: playground
 region: content
-weight: -4
+weight: -5
 provider: null
 plugin: system_messages_block
 settings:

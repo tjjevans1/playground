@@ -11,7 +11,7 @@ _core:
 id: playground_powered
 theme: playground
 region: footer
-weight: -5
+weight: -3
 provider: null
 plugin: system_powered_by_block
 settings:

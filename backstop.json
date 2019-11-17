@@ -23,6 +23,10 @@
     {
       "label": "playground_homescreen",
       "url": "https://playground.ddev.site/"
+    },
+    {
+      "label": "playground_styleguide",
+      "url": "https://playground.ddev.site/style-guide"
     }
   ],
   "paths": {
