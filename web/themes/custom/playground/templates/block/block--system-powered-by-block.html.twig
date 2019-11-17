@@ -27,24 +27,13 @@
  * @ingroup themeable
  */
 #}
-{% set classes = [
-  'pg-logo', 
-  configuration.desktop ? 'pg-logo--desktop',
-  configuration.mobile ? 'pg-logo--mobile'
-]%}
-
-<div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    {% if site_logo %}
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
-      </a>
-    {% endif %}
+    <p{{ attributes }}>
+      {{ content }}
+    </p>
   {% endblock %}
-</div>
-

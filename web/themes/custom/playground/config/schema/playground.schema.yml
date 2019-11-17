@@ -1,5 +1,5 @@
 # Schema for the configuration files of the Stark theme.
 
-stark.settings:
+playground.settings:
   type: theme_settings
   label: 'Playground settings'

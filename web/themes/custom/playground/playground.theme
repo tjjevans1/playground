@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\views\Views;
+use Drupal\block\Entity\Block;
 
 function playground_preprocess_views_view__pages__page_2(&$variables) {
   $view = Views::getView('pages');
@@ -60,4 +61,38 @@ function playground_preprocess_views_view__pages__page_2(&$variables) {
   }
 
   $variables['#attached']['drupalSettings']['playground']['pages_react']['filters'] = $filters;
+}
+
+function playground_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['alt_logo'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Alternate Logo Path'),
+    '#default_value' => theme_get_setting('alt_logo'),
+    '#description'   => t("Add a path to an alternate logo, for use in system branding block"),
+  );
+}
+
+function playground_preprocess_block__system_branding_block(&$variables) {
+  if (array_key_exists('#id', $variables['elements'])) {
+    $block = Block::load($variables['elements']['#id']);
+
+    if ($block) {
+      $region = $block->getRegion();
+
+      if ($region === 'header') {
+        $variables['configuration']['mobile'] = true;
+      }
+
+      if ($region === 'footer' && $variables['site_logo']) {
+        global $base_url;
+        $theme = \Drupal::theme()->getActiveTheme();
+        $variables['site_logo'] = $base_url . '/' . $theme->getPath() . '/' . theme_get_setting('alt_logo');
+      }
+    }
+  }
 }
