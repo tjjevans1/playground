@@ -21,7 +21,7 @@ module.exports = [{
       }
     ]
   },
-  mode: 'development'
+  mode: 'production'
 },
 {
   name: 'app',
@@ -47,5 +47,5 @@ module.exports = [{
       }
     ]
   },
-  mode: 'development'
+  mode: 'production'
 }];
