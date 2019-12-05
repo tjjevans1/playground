@@ -1,29 +1,38 @@
 .pg-radio {
-  display: inline-block;
-  font-size: $form-element-size;
-  border: $form-border;
-  height: 1em;
-  width: 1em;
-  border-radius: 50%;
   position: relative;
-  cursor: pointer;
-  background-color: $form-secondary-colour;
 
-  &:after {
-    content: "";
-    background-color: $form-secondary-colour;
-    position: absolute;
-    height: 50%;
-    width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &__box {
+    display: inline-block;
+    font-size: $form-element-size;
+    border: $form-border;
+    height: 1em;
+    width: 1em;
     border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    background-color: $form-secondary-colour;
+
+    &:after {
+      content: "";
+      background-color: $form-secondary-colour;
+      position: absolute;
+      height: 50%;
+      width: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
   }
 }
 
-input {
-  &:checked + .pg-radio {
+input[type="radio"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  &:checked + .pg-radio__box {
     background-color: $form-primary-colour;
 
     &:after {
@@ -31,7 +40,10 @@ input {
     }
   }
 
-  &:focus + .pg-radio {
-    box-shadow: 0px 0px 7px 0px map-get($colours, surf);
+  &:focus,
+  &:active {
+    + .pg-radio__box {
+      box-shadow: 0px 0px 7px 0px map-get($colours, surf);
+    }
   }
 }

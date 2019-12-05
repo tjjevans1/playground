@@ -62,7 +62,7 @@
     &:focus,
     &:active {
       outline: none;
-      box-shadow: 0 0 5px 0 map-get($colours, ocean);
+      box-shadow: 0 0 5px 0 map-get($colours, surf);
     }
   }
 
