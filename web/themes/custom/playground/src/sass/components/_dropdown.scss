@@ -1,0 +1,111 @@
+.pg-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 16px;
+  line-height: 1.1;
+
+  &.is-active {
+    .pg-dropdown__top {
+      border-radius: 15px 15px 0 0;
+
+      &:after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+
+    &.in-transition {
+      .pg-dropdown__top:after {
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &.in-transition {
+    .pg-dropdown__top {
+      border-radius: 15px 15px 0 0;
+
+      &:after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__top,
+  &__bottom {
+    padding: 15px 25px;
+    background-color: white;
+  }
+
+  &__top {
+    position: relative;
+    margin-bottom: -1px;
+    border: 1px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:after {
+      content: "\ea43";
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      display: block;
+      font-size: 1em;
+      font-family: map-get($font-families, icons);
+      transform: translateY(-50%);
+      transform-origin: center;
+      transition: transform 0.4s ease-in-out;
+      will-change: transform;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: 0 0 5px 0 map-get($colours, ocean);
+    }
+  }
+
+  &__bottom {
+    display: none;
+    width: 100%;
+    border: 1px solid black;
+    border-top: 1px solid black;
+    border-radius: 0 0 15px 15px;
+  }
+
+  &__selected {
+    margin-top: 2px;
+  }
+
+  &__item {
+    display: block;
+    display: flex;
+    margin: 12px 0;
+    cursor: pointer;
+  }
+
+  &__item-title {
+    font-family: map-get($font-families, display);
+  }
+
+  &__item-label {
+    font-size: 12px;
+    line-height: 1.35;
+    opacity: 0.5;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-dropdown {
+    max-width: 250px;
+    margin-right: 35px;
+
+    &__bottom {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 2;
+    }
+  }
+}

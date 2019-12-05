@@ -1,0 +1,73 @@
+.pg-tray {
+  background-color: white;
+
+  &__top {
+    border-bottom: 1px solid map-get($colours, rock);
+  }
+
+  &__bottom {
+    display: none;
+    padding: 26px 0;
+  }
+
+  &__trigger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -1px;
+    padding: 15px;
+    border-top: 1px solid map-get($colours, rock);
+  }
+
+  &__trigger-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 17px;
+      height: 17px;
+      margin-right: 5px;
+      background-image: url("#{$path-icons}/equalizer2.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &--close {
+      display: none;
+
+      &::before {
+        background-image: url("#{$path-icons}/cross.svg");
+        background-size: 10px;
+      }
+    }
+  }
+
+  &.is-open {
+    .pg-tray__trigger-text {
+      &--open {
+        display: none;
+      }
+
+      &--close {
+        display: flex;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-tray {
+    &__bottom {
+      display: block;
+      padding: 20px 0;
+    }
+
+    &__trigger {
+      display: none;
+    }
+  }
+}

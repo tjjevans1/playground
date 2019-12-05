@@ -13,6 +13,10 @@ import player from './components/player.js';
 import menu from './components/menu.js';
 import header from './components/header.js';
 import homepageGl from './components/homepage-gl.js';
+import tray from './components/tray.js';
+import dropdown from './components/dropdown.js';
+
+window.$ = window.$ || jQuery;
 
 (function (Drupal) {
 
@@ -29,6 +33,8 @@ import homepageGl from './components/homepage-gl.js';
       player();
       menu();
       homepageGl();
+      tray(context);
+      dropdown(context);
     },
   };
 

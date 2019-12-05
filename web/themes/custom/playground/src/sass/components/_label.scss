@@ -1,0 +1,7 @@
+.pg-label {
+  font-size: map-get($font-sizes, xs);
+  font-weight: bold;
+  line-height: map-get($line-heights, sm);
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-large;
+}

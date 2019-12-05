@@ -195,6 +195,95 @@
         </div>
       </div>
     </div>
+    <div class="pg-tray" data-tray>
+      <div class="pg-tray__top">
+        <div class="container">
+          <div class="pg-filter-tabs">
+            <div class="pg-label">Sort By</div>
+            <a class="pg-filter-tabs__tab">Featured</a>
+            <a class="pg-filter-tabs__tab is-active">Latest</a>
+          </div>
+        </div>
+      </div>
+      <div class="pg-tray__bottom" data-tray-bottom>
+        <div class="container">
+          <div class="pg-filter-wrapper">
+            {% for i in 1..3 %}
+              <div class="pg-dropdown" data-dropdown>
+                <div class="pg-dropdown__top" data-dropdown-top tabindex="0">
+                  <div class="pg-label">Events for</div>
+                  <div class="pg-dropdown__selected" data-dropdown-selected>Events for everyone</div>
+                </div>
+                <div class="pg-dropdown__bottom" data-dropdown-bottom>
+                  {% for i in 1..3 %}
+                    <label class="pg-dropdown__item">
+                      <div class="pg-checkbox">
+                        <input type="checkbox"/>
+                        <div class="pg-checkbox__box"></div>
+                      </div>
+                      <div>
+                        <div class="pg-dropdown__item-title">Seminar</div>
+                        <div class="pg-dropdown__item-label">Quisque placerat facilisis egestas.</div>
+                      </div>
+                    </label>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+            <div class="pg-filter-wrapper__buttons">
+              <button class="pg-button">Apply Filters</button>
+              <button class="pg-button pg-button--clear">Clear Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-tray__trigger" data-tray-trigger>
+        <div class="pg-tray__trigger-text pg-tray__trigger-text--open">Filters</div>
+        <div class="pg-tray__trigger-text pg-tray__trigger-text--close">Close</div>
+      </div>
+    </div>
+    <div class="pg-page-section pg-page-section--rock">
+      <div class="container">
+        <div class="row">
+          {% for i in 1..3 %}
+            <div class="col-xs-12 col-md-4 col-grow">
+              <div class="pg-card">
+                <div class="pg-card__inner">
+                  <div class="pg-card__image">
+                    <img src="https://picsum.photos/382/213">
+                  </div>
+                  <div class="pg-card__content">
+                    <div class="pg-card__content-top">
+                      <div class="pg-card__label">
+                        M&S
+                      </div>
+                      <h3 class="pg-card__title">
+                        {% if loop.last %}
+                          Accumsan consequat fames scelerisque id tempus massa velit
+                        {% else %}
+                          Short Title
+                        {% endif %}
+                      </h3>
+                    </div>
+                    <div class="pg-card__content-bottom">
+                      <div class="pg-card__detail">
+                        <div class="pg-label">Sector</div>
+                        <div>Retail, FMCG</div>
+                      </div>
+                      <div class="pg-card__detail">
+                        <div class="pg-label">Objective</div>
+                        <div>Awareness, consideration, sales</div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="" class="pg-card__link"></a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="pg-grid" data-pg-grid>
         <div class="row">

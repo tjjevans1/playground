@@ -1,0 +1,47 @@
+.pg-filter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+  &__buttons {
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+
+    > :last-child {
+      margin-right: 0;
+    }
+
+    .pg-button {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    &.form-group:last-child {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__buttons {
+    > :last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-filter-wrapper {
+    &__buttons {
+      flex-direction: row;
+      width: auto;
+      margin: 12px 0;
+
+      .pg-button {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

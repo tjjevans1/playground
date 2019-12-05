@@ -1,1 +1,6 @@
 @import "bootstrap/scss/grid";
+
+.col-grow {
+  display: flex;
+  flex-direction: column;
+}
