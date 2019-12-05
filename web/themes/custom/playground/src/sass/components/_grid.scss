@@ -1,12 +1,19 @@
 .pg-grid {
   margin: $spacing-margin 0;
 
-  &__title {
-    margin-top: 0;
-    color: black;
-  }
-
   &__item {
     margin-bottom: 30px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-grid {
+    column-count: 3;
+    column-gap: $grid-gutter-width;
+
+    &__item {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
   }
 }

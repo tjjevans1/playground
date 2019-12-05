@@ -7,7 +7,6 @@ import breakpoints from './utilities/breakpoints.js';
 
 import accordion from './components/accordion.js';
 import scroller from './components/scroller.js';
-import grid from './components/grid.js';
 import revealer from './components/revealer.js';
 import player from './components/player.js';
 import menu from './components/menu.js';
@@ -28,7 +27,6 @@ window.$ = window.$ || jQuery;
       header();
       accordion();
       scroller();
-      grid();
       revealer();
       player();
       menu();
