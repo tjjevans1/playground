@@ -2,6 +2,11 @@
   "id": "playground",
   "viewports": [
     {
+      "label": "mobile",
+      "width": 320,
+      "height": 480
+    },
+    {
       "label": "desktop",
       "width": 1200,
       "height": 1024
@@ -10,6 +15,10 @@
   "onBeforeScript": "puppet/onBefore.js",
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
+    {
+      "label": "homepage",
+      "url": "http://playground.ddev.site/"
+    },
     {
       "label": "playground_styleguide",
       "url": "http://playground.ddev.site/style-guide",
