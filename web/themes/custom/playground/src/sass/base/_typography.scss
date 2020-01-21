@@ -4,6 +4,7 @@ html {
   color: map-get($colours, slate);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: map-get($colours, cream);
 }
 
 h1,
