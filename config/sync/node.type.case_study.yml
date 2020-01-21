@@ -1,4 +1,4 @@
-uuid: d7325b5d-49e2-4ff7-8f9f-10b977771b73
+uuid: 194548cf-fde1-49ba-a5f5-6d2d2465df30
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
-name: Blog
-type: article
-description: 'Blog articles'
+name: 'Case Study'
+type: case_study
+description: 'Case studies'
 help: ''
 new_revision: true
 preview_mode: 1
