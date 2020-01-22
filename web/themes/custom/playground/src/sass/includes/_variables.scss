@@ -4,7 +4,7 @@ $colours: (
   surf: #53cdd6,
   sand: #f4d35e,
   rock: #daddd8,
-  grass: #cff27e,
+  grass: #137e00,
   earth: #704e2e,
   slate: #252323,
   rust: #f9a03f,
@@ -59,7 +59,7 @@ $spacing-margin: 1rem;
 // Forms
 $form-border: 1px solid map-get($colours, rock);
 $form-primary-colour: map-get($colours, slate);
-$form-secondary-colour: map-get($colours, cream);
+$form-secondary-colour: white;
 $form-element-size: map-get($font-sizes, xl);
 
 // Paths

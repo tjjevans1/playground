@@ -9,11 +9,22 @@
     height: 6rem;
     width: 12rem;
     display: inline-block;
+    border: 1px solid transparent;
   }
 
   @each $colour, $hexref in $colours {
-    &--#{$colour}:before {
-      background-color: $hexref;
+    &--#{$colour} {
+      &:before {
+        background-color: $hexref;
+      }
+
+      &:after {
+        content: "#{$colour} - #{$hexref}";
+      }
     }
+  }
+
+  &--cream:before {
+    border: 1px solid map-get($colours, slate);
   }
 }

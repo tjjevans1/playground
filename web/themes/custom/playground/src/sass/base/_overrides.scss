@@ -1,7 +1,5 @@
 #block-playground-local-tasks {
-  border-bottom: 1px solid map-get($colours, slate);
   padding: $spacing-margin 0;
-  background-color: white;
 
   ul {
     @include menu-reset;

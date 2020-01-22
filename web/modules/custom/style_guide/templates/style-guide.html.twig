@@ -26,18 +26,18 @@
       <h2>Colours</h2>
       <div class="row">
         <div class="col-md-6">
-          <p class="pg-swatch pg-swatch--cream">Cream - #F8F9EF</p>
-          <p class="pg-swatch pg-swatch--rock">Rock - #DADDD8</p>
-          <p class="pg-swatch pg-swatch--sand">Sand - #F4D35E</p>
-          <p class="pg-swatch pg-swatch--surf">Surf - #53CDD6</p>
-          <p class="pg-swatch pg-swatch--grass">Grass - #CFF27E</p>
+          <p class="pg-swatch pg-swatch--cream"></p>
+          <p class="pg-swatch pg-swatch--rock"></p>
+          <p class="pg-swatch pg-swatch--sand"></p>
+          <p class="pg-swatch pg-swatch--surf"></p>
+          <p class="pg-swatch pg-swatch--grass"></p>
         </div>
         <div class="col-md-6">
-          <p class="pg-swatch pg-swatch--slate">Slate - #252323</p>
-          <p class="pg-swatch pg-swatch--earth">Earth - #704E2E</p>
-          <p class="pg-swatch pg-swatch--rust">Rust - #F9A03F</p>
-          <p class="pg-swatch pg-swatch--ocean">Ocean - #2176AE</p>
-          <p class="pg-swatch pg-swatch--blood">Blood - #B3001B</p>
+          <p class="pg-swatch pg-swatch--slate"></p>
+          <p class="pg-swatch pg-swatch--earth"></p>
+          <p class="pg-swatch pg-swatch--rust"></p>
+          <p class="pg-swatch pg-swatch--ocean"></p>
+          <p class="pg-swatch pg-swatch--blood"></p>
         </div>
       </div>
       <hr>
@@ -69,6 +69,9 @@
       <span class="pg-icon pg-icon--arrow-up"></span>
       <span class="pg-icon pg-icon--arrow-down"></span>
       <span class="pg-icon pg-icon--checkmark"></span>
+      <span class="pg-icon pg-icon--circle-down"></span>
+      <span class="pg-icon pg-icon--cross"></span>
+      <span class="pg-icon pg-icon--equalizer2"></span>
       <hr>
       <h2>Forms</h2>
       <label class="pg-form__element">
@@ -134,6 +137,21 @@
       {% endspaceless %}
       <hr>
       <h2>Components</h2>
+      <div class="pg-alert" data-pg-alert>
+        <h4>Alert title</h4>
+        <p>Alert message</p>
+        <button class="pg-alert__close-button" data-pg-alert-close><span class="sr-only">Close</span></button>
+      </div>
+      <div class="pg-alert pg-alert--warning" data-pg-alert>
+        <h4>Alert title</h4>
+        <p>Alert message</p>
+        <button class="pg-alert__close-button" data-pg-alert-close><span class="sr-only">Close</span></button>
+      </div>
+      <div class="pg-alert pg-alert--error" data-pg-alert>
+        <h4>Alert title</h4>
+        <p>Alert message</p>
+        <button class="pg-alert__close-button" data-pg-alert-close><span class="sr-only">Close</span></button>
+      </div>
     </div>
     <div class="pg-hero">
       <div class="pg-hero__content">
@@ -330,19 +348,19 @@
       </div>
     </div>
   </div>
-</div>
-<div class="pg-footer">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-3">
-        <div class="pg-logo">
-          <a href=""><img src="{{ base_path ~ directory }}/logo-bw.svg"/></a>
+  <div class="pg-footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-3">
+          <div class="pg-logo">
+            <a href=""><img src="{{ base_path ~ directory }}/logo-bw.svg"/></a>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-9">
-        <p><a href="">About</a></p>
-        <p><a href="">Contact</a></p>
-        <p>© Tom Evans 2019</p>
+        <div class="col-lg-9">
+          <p><a href="">About</a></p>
+          <p><a href="">Contact</a></p>
+          <p>© Tom Evans 2019</p>
+        </div>
       </div>
     </div>
   </div>

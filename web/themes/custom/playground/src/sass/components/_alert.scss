@@ -1,0 +1,82 @@
+.pg-alert {
+  border-radius: 5px;
+  border: 1px solid map-get($colours, grass);
+  background-color: adjust-color(
+    $color: map-get($colours, grass),
+    $lightness: 60,
+    $saturation: -50
+  );
+  padding: 0 $spacing-margin;
+  position: relative;
+  color: map-get($colours, grass);
+  margin: $spacing-margin 0;
+
+  &__close-button {
+    @include button-reset();
+    cursor: pointer;
+    position: absolute;
+    top: $spacing-margin;
+    right: $spacing-margin;
+    height: 15px;
+    width: 15px;
+    color: inherit;
+
+    &::after {
+      content: "\ea0f";
+      font-family: "icomoon";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 100%;
+    }
+
+    &:hover {
+      color: darken($color: map-get($colours, grass), $amount: 10);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 7px 0px
+        darken($color: map-get($colours, grass), $amount: 30);
+    }
+  }
+
+  &--warning {
+    border: 1px solid darken($color: map-get($colours, sand), $amount: 30);
+    background-color: lighten($color: map-get($colours, sand), $amount: 20);
+    color: darken($color: map-get($colours, sand), $amount: 30);
+
+    .pg-alert__close-button {
+      &:hover {
+        color: darken($color: map-get($colours, sand), $amount: 40);
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 7px 0px
+          darken($color: map-get($colours, sand), $amount: 30);
+      }
+    }
+  }
+
+  &--error {
+    border: 1px solid map-get($colours, blood);
+    background-color: adjust-color(
+      $color: map-get($colours, blood),
+      $lightness: 50,
+      $saturation: -50
+    );
+    color: map-get($colours, blood);
+
+    .pg-alert__close-button {
+      &:hover {
+        color: darken($color: map-get($colours, blood), $amount: 10);
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 7px 0px
+          darken($color: map-get($colours, blood), $amount: 30);
+      }
+    }
+  }
+}

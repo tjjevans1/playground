@@ -8,13 +8,27 @@
   text-transform: none;
   line-height: 1;
 
-  &--checkmark:before {
-    content: "\ea10";
+  &--arrow-down:before {
+    content: "\ea36";
   }
+
   &--arrow-up:before {
     content: "\ea32";
   }
-  &--arrow-down:before {
-    content: "\ea36";
+
+  &--checkmark:before {
+    content: "\ea10";
+  }
+
+  &--circle-down:before {
+    content: "\ea43";
+  }
+
+  &--cross:before {
+    content: "\ea0f";
+  }
+
+  &--equalizer2:before {
+    content: "\e993";
   }
 }

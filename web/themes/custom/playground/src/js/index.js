@@ -14,6 +14,7 @@ import header from './components/header.js';
 import homepageGl from './components/homepage-gl.js';
 import tray from './components/tray.js';
 import dropdown from './components/dropdown.js';
+import alert from './components/alert.js';
 
 window.$ = window.$ || jQuery;
 
@@ -33,6 +34,7 @@ window.$ = window.$ || jQuery;
       homepageGl();
       tray(context);
       dropdown(context);
+      alert(context);
     },
   };
 
