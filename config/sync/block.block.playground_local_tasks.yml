@@ -8,8 +8,8 @@ _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: playground_local_tasks
 theme: playground
-region: content
-weight: -4
+region: admin
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

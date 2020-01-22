@@ -11,5 +11,6 @@ libraries:
 
 regions:
   header: 'Header'
+  admin: 'Admin'
   content: 'Content'
   footer: 'Footer'

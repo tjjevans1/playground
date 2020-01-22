@@ -8,8 +8,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: playground_local_actions
 theme: playground
-region: content
-weight: -2
+region: admin
+weight: -5
 provider: null
 plugin: local_actions_block
 settings:

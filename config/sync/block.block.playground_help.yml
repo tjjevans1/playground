@@ -11,7 +11,7 @@ _core:
 id: playground_help
 theme: playground
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: help_block
 settings:
