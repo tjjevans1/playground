@@ -43,7 +43,7 @@ input[type="radio"] {
   &:focus,
   &:active {
     + .pg-radio__box {
-      box-shadow: 0px 0px 7px 0px map-get($colours, surf);
+      box-shadow: $box-shadow-focus;
     }
   }
 }

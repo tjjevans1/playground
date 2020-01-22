@@ -43,7 +43,8 @@
     transition: width 0.2s linear;
   }
 
-  &:focus {
+  &:focus,
+  &:active {
     outline: none;
 
     span {

@@ -44,7 +44,7 @@
     &:focus,
     &:active {
       + .pg-checkbox__box {
-        box-shadow: 0px 0px 7px 0px map-get($colours, ocean);
+        box-shadow: $box-shadow-focus;
       }
     }
   }

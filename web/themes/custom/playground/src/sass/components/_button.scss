@@ -1,0 +1,111 @@
+$button-border-thickness: 2px;
+
+.pg-button {
+  @include button-reset;
+  display: inline-block;
+  position: relative;
+  border: $button-border-thickness solid map-get($colours, slate);
+  border-radius: 50px;
+  padding: 7px 16px;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-large;
+  cursor: pointer;
+  font-weight: bold;
+  color: map-get($map: $colours, $key: cream);
+  background-color: map-get($colours, slate);
+  text-decoration: none;
+  transition: background-color 0.1s linear;
+  margin: #{$spacing-margin/2} 0;
+
+  button,
+  a {
+    @include button-reset;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-large;
+    font-weight: bold;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -$button-border-thickness;
+      left: -$button-border-thickness;
+      right: -$button-border-thickness;
+      bottom: -$button-border-thickness;
+      border-radius: 50px;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+
+      &:after {
+        box-shadow: $box-shadow-focus;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: lighten(
+      $color: map-get($map: $colours, $key: slate),
+      $amount: 30
+    );
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: $box-shadow-focus;
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: inherit;
+
+    &:hover {
+      background-color: darken(
+        $color: map-get($map: $colours, $key: cream),
+        $amount: 10
+      );
+    }
+  }
+
+  &--tertiary {
+    border-width: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    border-radius: 0;
+
+    &:hover {
+      color: lighten($color: map-get($map: $colours, $key: slate), $amount: 30);
+      background-color: transparent;
+    }
+  }
+
+  &--phone:after {
+    content: "\e942";
+    font-family: map-get($font-families, icons);
+    margin-left: 10px;
+  }
+
+  &--arrow-right-thin:after {
+    content: "\ea3c";
+    font-family: map-get($font-families, icons);
+    margin-left: 10px;
+  }
+
+  &--arrow-left-thin:before {
+    content: "\ea40";
+    font-family: map-get($font-families, icons);
+    margin-right: 10px;
+  }
+
+  &--download:after {
+    content: "\e960";
+    font-family: map-get($font-families, icons);
+    margin-left: 10px;
+  }
+}

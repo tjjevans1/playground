@@ -1,6 +1,6 @@
 // Colours
 $colours: (
-  cream: #f8f9ef,
+  cream: #f9f7ef,
   surf: #53cdd6,
   sand: #f4d35e,
   rock: #daddd8,
@@ -71,3 +71,6 @@ $path-icons: "#{$path-images}/icon";
 $layer-header: 2;
 $layer-revealer: 1;
 $layer-player: -1;
+
+// Box shadow
+$box-shadow-focus: 0 0 8px 3px map-get($colours, ocean);

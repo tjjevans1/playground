@@ -38,7 +38,8 @@
       letter-spacing: $letter-spacing-large;
       transition: color ease-in-out 0.3s;
 
-      &:focus {
+      &:focus,
+      &:active {
         color: map-get($colours, rust);
       }
 

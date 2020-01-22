@@ -63,15 +63,43 @@
       </div>
       <hr>
       <h2>Buttons</h2>
-      
+      <div>
+        <button class="pg-button">Button</button>
+        <a href="" class="pg-button">Link</a>
+        <div class="pg-button"><button>Wrapper</button></div>
+        <div class="pg-button"><a href="">Wrap Link</a></div>
+        <input type="submit" value="Submit" class="pg-button"/>
+      </div>
+      <div>
+        <button class="pg-button pg-button--phone">Phone</button>
+        <button class="pg-button pg-button--arrow-right-thin">Next</button>
+        <button class="pg-button pg-button--arrow-left-thin">Previous</button>
+        <button class="pg-button pg-button--download">Download</button>
+      </div>
+      <div>
+        <button class="pg-button pg-button--secondary">Secondary</button>
+        <button class="pg-button pg-button--secondary pg-button--phone">Icon</button>
+        <button class="pg-button pg-button--secondary pg-button--download">Download</button>
+      </div>
+      <div>
+        <button class="pg-button pg-button--tertiary pg-button--arrow-right-thin">Tertiary</button>
+        <button class="pg-button pg-button--tertiary pg-button--arrow-left-thin">Previous</button>
+        <button class="pg-button pg-button--tertiary pg-button--download">Download</button>
+      </div>
       <hr>
       <h2>Icons</h2>
-      <span class="pg-icon pg-icon--arrow-up"></span>
       <span class="pg-icon pg-icon--arrow-down"></span>
+      <span class="pg-icon pg-icon--arrow-left-thin"></span>
+      <span class="pg-icon pg-icon--arrow-right-thin"></span>
+      <span class="pg-icon pg-icon--arrow-up"></span>
       <span class="pg-icon pg-icon--checkmark"></span>
       <span class="pg-icon pg-icon--circle-down"></span>
       <span class="pg-icon pg-icon--cross"></span>
+      <span class="pg-icon pg-icon--download"></span>
+      <span class="pg-icon pg-icon--envelop"></span>
       <span class="pg-icon pg-icon--equalizer2"></span>
+      <span class="pg-icon pg-icon--linkedin2"></span>
+      <span class="pg-icon pg-icon--phone"></span>
       <hr>
       <h2>Forms</h2>
       <label class="pg-form__element">
@@ -231,8 +259,8 @@
         <div class="container">
           <div class="pg-filter-tabs">
             <div class="pg-label">Sort By</div>
-            <a class="pg-filter-tabs__tab">Featured</a>
-            <a class="pg-filter-tabs__tab is-active">Latest</a>
+            <a href="" class="pg-filter-tabs__tab">Featured</a>
+            <a href="" class="pg-filter-tabs__tab is-active">Latest</a>
           </div>
         </div>
       </div>
@@ -263,7 +291,7 @@
             {% endfor %}
             <div class="pg-filter-wrapper__buttons">
               <button class="pg-button">Apply Filters</button>
-              <button class="pg-button pg-button--clear">Clear Filters</button>
+              <button class="pg-button">Clear Filters</button>
             </div>
           </div>
         </div>
