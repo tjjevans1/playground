@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_paragraphs
     - field.field.node.page.field_tags
     - node.type.page
   module:
+    - entity_reference_revisions
     - text
     - user
 _core:
@@ -23,6 +25,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_tags:
     weight: 102
     label: above
@@ -34,4 +45,6 @@ content:
   links:
     weight: 101
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
