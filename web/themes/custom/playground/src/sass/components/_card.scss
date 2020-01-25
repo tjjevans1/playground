@@ -18,7 +18,8 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    background-color: white;
+    background-color: map-get($colours, cream);
+    color: map-get($colours, slate);
 
     &:after {
       content: "";

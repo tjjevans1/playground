@@ -35,7 +35,7 @@
   &__top,
   &__bottom {
     padding: 15px 25px;
-    background-color: white;
+    background-color: map-get($colours, cream);
   }
 
   &__top {

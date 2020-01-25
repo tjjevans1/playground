@@ -1,6 +1,6 @@
 .pg-accordion {
   &__content {
-    @include reset-margin-children;
+    @include reset-child-margins;
     display: none;
   }
 

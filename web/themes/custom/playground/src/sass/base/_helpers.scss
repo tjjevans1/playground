@@ -9,3 +9,7 @@
 .pg-type-display {
   font-family: map-get($font-families, display);
 }
+
+.pg-reset-child-margins {
+  @include reset-child-margins;
+}

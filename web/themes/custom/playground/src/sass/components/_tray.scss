@@ -1,5 +1,5 @@
 .pg-tray {
-  background-color: white;
+  background-color: map-get($colours, cream);
 
   &__top {
     border-bottom: 1px solid map-get($colours, rock);

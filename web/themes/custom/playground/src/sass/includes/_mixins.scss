@@ -14,7 +14,7 @@
   list-style: none;
 }
 
-@mixin reset-margin-children {
+@mixin reset-child-margins {
   & > :first-child {
     margin-top: 0;
   }

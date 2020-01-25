@@ -1,8 +1,12 @@
 .pg-grid {
-  margin: $spacing-margin 0;
+  padding: $spacing-margin 0;
 
   &__item {
     margin-bottom: 30px;
+  }
+
+  * {
+    margin-top: 0;
   }
 }
 

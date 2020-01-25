@@ -1,8 +1,15 @@
 .pg-page-section {
   padding: 30px 0;
 
-  &--rock {
-    background-color: map-get($colours, rock);
+  &--inverse {
+    background-color: map-get($colours, slate);
+    color: map-get($colours, cream);
+  }
+
+  &--reverse {
+    .row {
+      flex-direction: row-reverse;
+    }
   }
 }
 
