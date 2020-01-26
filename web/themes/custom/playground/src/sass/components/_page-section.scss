@@ -1,5 +1,6 @@
 .pg-page-section {
   padding: 30px 0;
+  position: relative;
 
   &--inverse {
     background-color: map-get($colours, slate);
@@ -11,11 +12,36 @@
       flex-direction: row-reverse;
     }
   }
+
+  &__image {
+    padding-top: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: $spacing-margin * 2;
+  }
 }
 
 @include media-breakpoint-up(md) {
   .pg-page-section {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    &__image {
+      margin-top: 0;
+      padding-top: 0;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      left: 50%;
+      top: 0;
+    }
+
+    &--reverse {
+      .pg-page-section__image {
+        left: auto;
+        right: 50%;
+      }
+    }
   }
 }
