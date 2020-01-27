@@ -1,0 +1,32 @@
+.pg-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: $spacing-margin * 2 0;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-banner {
+    text-align: left;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+    }
+
+    &__header {
+      margin-right: $spacing-margin * 2;
+    }
+
+    &__content {
+      flex-grow: 1;
+    }
+  }
+}
