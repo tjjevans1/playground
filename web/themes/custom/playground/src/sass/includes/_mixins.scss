@@ -1,5 +1,13 @@
 @import "bootstrap/scss/mixins/screen-reader";
-@import "bootstrap/scss/mixins/clearfix";
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 
 // Button reset. Remove padding, border and background color from button
 @mixin button-reset() {

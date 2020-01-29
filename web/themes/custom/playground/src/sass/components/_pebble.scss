@@ -1,0 +1,87 @@
+.pg-pebble {
+  display: flex;
+  align-items: center;
+  border: 1px solid map-get($map: $colours, $key: rock);
+  border-radius: 12px;
+  padding: $spacing-margin;
+  margin-bottom: $spacing-margin;
+  flex-grow: 1;
+  position: relative;
+  background-color: darken(
+    $color: map-get($map: $colours, $key: cream),
+    $amount: 10
+  );
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s linear, background-color 0.2s linear;
+
+  &__content {
+    @include reset-child-margins;
+    flex-grow: 1;
+  }
+
+  &__head {
+    margin-right: $spacing-margin;
+  }
+
+  a {
+    position: static;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &:hover {
+    color: map-get($map: $colours, $key: cream);
+  }
+}
+
+.pg-pebble-container {
+  > :nth-child(5n + 1) .pg-pebble:hover {
+    background-color: map-get($map: $colours, $key: grass);
+  }
+
+  > :nth-child(5n + 2) .pg-pebble:hover {
+    background-color: map-get($map: $colours, $key: blood);
+  }
+
+  > :nth-child(5n + 3) .pg-pebble:hover {
+    background-color: map-get($map: $colours, $key: rust);
+  }
+
+  > :nth-child(5n + 4) .pg-pebble:hover {
+    color: inherit;
+    background-color: map-get($map: $colours, $key: sand);
+  }
+
+  > :nth-child(5n + 5) .pg-pebble:hover {
+    background-color: map-get($map: $colours, $key: ocean);
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-pebble {
+    flex-direction: column;
+    margin-bottom: $spacing-margin * 2;
+
+    &__head {
+      margin-right: 0;
+      margin-bottom: $spacing-margin * 1.5;
+    }
+
+    &__content {
+      align-self: stretch;
+      text-align: center;
+    }
+
+    &:hover {
+      transform: translateY(-$spacing-margin);
+      box-shadow: $box-shadow-hover;
+    }
+  }
+}

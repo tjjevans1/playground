@@ -10,6 +10,11 @@
     flex-direction: column;
     align-items: center;
   }
+
+  &--inverse {
+    background-color: map-get($map: $colours, $key: slate);
+    color: map-get($map: $colours, $key: cream);
+  }
 }
 
 @include media-breakpoint-up(md) {

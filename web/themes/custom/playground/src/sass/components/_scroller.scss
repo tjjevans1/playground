@@ -61,5 +61,11 @@
         }
       }
     }
+
+    &--reverse {
+      .pg-scroller__row {
+        flex-direction: row-reverse;
+      }
+    }
   }
 }

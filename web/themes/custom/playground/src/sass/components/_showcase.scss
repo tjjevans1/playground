@@ -1,0 +1,121 @@
+.pg-showcase {
+  margin: $spacing-margin * 2 0;
+
+  .row {
+    flex-wrap: nowrap;
+    overflow: auto;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-direction: column;
+    box-sizing: content-box;
+    max-width: 248px;
+    padding: 0 8px;
+    position: relative;
+
+    &:first-child {
+      border-left: 12px solid transparent;
+    }
+
+    &:last-child {
+      border-right: 12px solid transparent;
+    }
+
+    p {
+      flex-grow: 1;
+      margin-top: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      position: static;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: 0;
+        bottom: 0;
+      }
+
+      &:focus {
+        box-shadow: none;
+
+        &:before {
+          box-shadow: $box-shadow-focus;
+        }
+      }
+    }
+
+    &:hover {
+      color: lighten($color: map-get($map: $colours, $key: slate), $amount: 30);
+
+      .pg-showcase__image img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+
+    img {
+      vertical-align: top;
+      transition: transform 0.2s ease-out;
+      transform-origin: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .pg-showcase {
+    margin: $spacing-margin * 2 0;
+
+    .row {
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    &__item {
+      box-sizing: border-box;
+      max-width: none;
+
+      &,
+      &:first-child,
+      &:last-child {
+        padding-right: $grid-gutter-width / 2;
+        padding-left: $grid-gutter-width / 2;
+        border-width: 0;
+      }
+
+      a:before {
+        content: "";
+        position: absolute;
+        left: $grid-gutter-width/2;
+        right: $grid-gutter-width/2;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

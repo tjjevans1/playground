@@ -1,18 +1,21 @@
 .pg-hero {
   padding-top: 100%;
   position: relative;
-  background-color: map-get($colours, cream);
+  color: map-get($map: $colours, $key: cream);
+  background-size: cover;
+  background-position: center;
 
   &__content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
   }
 }
 
 @include media-breakpoint-up(md) {
   .pg-hero {
-    padding-top: 56.25%;
+    padding-top: 50%;
   }
 }

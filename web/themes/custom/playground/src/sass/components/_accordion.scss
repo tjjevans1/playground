@@ -7,5 +7,27 @@
   &__slide {
     @include clearfix;
     cursor: pointer;
+    position: relative;
+    padding-right: 60px;
+
+    &.is-active {
+      .pg-accordion__icon:before {
+        content: "\ea0b";
+      }
+    }
+
+    + .pg-accordion__slide {
+      border-top: 1px solid map-get($map: $colours, $key: rock);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    top: 1em;
+  }
+
+  &__content {
+    padding: $spacing-margin 0;
   }
 }
