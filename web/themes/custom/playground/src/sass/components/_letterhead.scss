@@ -1,0 +1,8 @@
+.pg-letterhead {
+  margin-top: -4rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 1rem 2rem;
+  position: relative;
+  background-color: map-get($map: $colours, $key: cream);
+}
