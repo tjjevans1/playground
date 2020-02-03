@@ -54,3 +54,7 @@ p {
     color: map-get($colours, ocean);
   }
 }
+
+.pg-type-intro {
+  font-size: map-get($map: $font-sizes, $key: xl);
+}

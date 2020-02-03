@@ -59,6 +59,14 @@
         </div>
         <div class="col-md-6">
           <p>Paragraph - Amet proident cillum reprehenderit irure fugiat sit cillum pariatur excepteur excepteur. <a href="">Inline link</a> excepteur ea deserunt mollit ad laboris voluptate ad aliquip amet labore adipisicing. Officia eu non deserunt incididunt eiusmod ipsum ea esse exercitation voluptate dolor ipsum voluptate.</p>
+          <p class="pg-label">Lorem ipsum dolar</p>
+          <p><code>Code example</code></p>
+          <p><b>Bold text</b></p>
+          <p><em>Italic Text</em></p>
+          <p><a href="">Inline Link</a></p>
+        </div>
+        <div class="col-md-6">
+          <p class="pg-type-intro">Enim esse occaecat nulla ex ad reprehenderit dolore anim incididunt eu nostrud id. Pariatur sunt consectetur excepteur excepteur pariatur exercitation eu nostrud id nulla quis laboris esse minim. Nulla fugiat aliqua eu nisi. Deserunt eiusmod dolor minim esse aliqua nostrud eu. Cillum mollit laborum veniam ipsum voluptate. Esse ut Lorem eu minim esse Lorem. Magna culpa cillum fugiat culpa aute duis sunt in nulla elit ea.</p>
         </div>
       </div>
       <hr>
@@ -342,8 +350,8 @@
               </div>
             {% endfor %}
             <div class="pg-filter-wrapper__buttons">
-              <button class="pg-button">Apply Filters</button>
-              <button class="pg-button">Clear Filters</button>
+              <button class="pg-button">Apply</button>
+              <button class="pg-button">Clear</button>
             </div>
           </div>
         </div>
@@ -557,7 +565,7 @@
       </div>
     </div>
     <div class="pg-page-section">
-      <div class="container">
+      <div class="container pg-reset-child-margins">
         <div class="pg-showcase" data-pg-showcase>
           <div class="row">
             {% for i in 1..3 %}
@@ -572,6 +580,40 @@
                 </div>
               </div>
             {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-page-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2 pg-rich-text pg-reset-child-margins">
+            <p>Est et ut voluptate est. Minim officia est sit eu exercitation pariatur adipisicing proident laborum Lorem exercitation. Ex eu ut aliquip irure anim esse nulla ullamco incididunt sunt ad sit. Ea fugiat amet ut duis non fugiat adipisicing. Id commodo sunt do do labore veniam eiusmod nisi ut excepteur nulla tempor proident. Excepteur aute ullamco aliquip sit aliquip incididunt in laborum amet quis exercitation dolore.</p>
+            <ul>
+              <li>Ex voluptate ad ullamco laboris ullamco.</li>
+              <li>Tempor ad labore commodo ullamco velit reprehenderit est magna officia dolor enim sint nostrud.</li>
+              <li>Ex veniam reprehenderit anim minim adipisicing cillum nostrud.</li>
+            </ul>
+            <p>Ad non culpa ut excepteur sint eiusmod do eiusmod et ut culpa quis ullamco. Veniam proident officia excepteur elit sunt aliquip. Do excepteur anim commodo nisi cupidatat est in. Non ipsum cillum officia magna tempor nulla quis aliqua tempor nisi fugiat eu voluptate. Sunt do cupidatat sit laboris laboris magna in ullamco officia mollit reprehenderit ullamco labore enim.</p>
+            <ol>
+              <li>Ex voluptate ad ullamco laboris ullamco.</li>
+              <li>Tempor ad labore commodo ullamco velit reprehenderit est magna officia dolor enim sint nostrud.</li>
+              <li>Ex veniam reprehenderit anim minim adipisicing cillum nostrud.</li>
+            </ol>
+            <img src="http://picsum.photos/500/360"/>
+            <video controls>
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            </video>
+            <div class="pg-rich-text__iframe">
+              <iframe src="https://www.youtube.com/embed/r1bTeElWBSg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <pre>
+.pg-rich-text pre {
+    padding: $spacing-margin;
+    background-color: map-get($map: $colours, $key: rock);
+    border: 1px solid map-get($map: $colours, $key: slate);
+    border-radius: 12px;
+}</pre>
           </div>
         </div>
       </div>

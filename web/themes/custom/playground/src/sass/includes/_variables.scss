@@ -7,7 +7,7 @@ $colours: (
   grass: #137e00,
   earth: #704e2e,
   slate: #252323,
-  rust: #f9a03f,
+  rust: #ff8025,
   blood: #b3001b,
   ocean: #2176ae
 );
@@ -54,7 +54,7 @@ $line-heights: (
 $letter-spacing-large: 1.5px;
 
 // Spacing
-$spacing-margin: 1rem;
+$spacing-margin: 1.25rem;
 
 // Forms
 $form-border: 1px solid map-get($colours, rock);
