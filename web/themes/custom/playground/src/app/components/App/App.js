@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Node from "../Node/Node";
 import FilterGroup from "../FilterGroup/FilterGroup";
+import SortGroup from "../SortGroup/SortGroup";
 import { FilterContext } from "../../contexts/Filter/filter-context";
 
 const url = "/rest/pages";
@@ -12,6 +13,7 @@ function App(props) {
   const [stateLoading, setLoading] = useState(false);
   const [stateData, setData] = useState([]);
   const [stateFilters, setFilters] = useState([]);
+  const [stateSorts, setSorts] = useState([]);
 
   function getFilterValues(filter) {
     const values = filter.options
@@ -116,6 +118,23 @@ function App(props) {
     return filters;
   }
 
+  function buildSorts() {
+    const sorts = window.drupalSettings.playground.pages_react.sorts.map(
+      sort => {
+        sort["active"] = false;
+        return sort;
+      }
+    );
+
+    sorts.unshift({
+      id: "none",
+      label: "None",
+      active: true
+    });
+
+    return sorts;
+  }
+
   function handleFilterChange(filter_id, option_id) {
     const filters = stateFilters.map(filter => {
       if (filter.id === filter_id) {
@@ -150,6 +169,7 @@ function App(props) {
   function handleResponseData(data) {
     setData(data);
     setFilters(buildFilters());
+    setSorts(buildSorts());
   }
 
   useEffect(() => {
@@ -185,6 +205,7 @@ function App(props) {
     >
       <div>
         <FilterGroup filters={stateFilters} />
+        <SortGroup sorts={stateSorts} />
         <div>
           {nodes.map((node, key) => {
             return <Node key={key} node={node} />;

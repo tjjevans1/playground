@@ -11,56 +11,71 @@ function playground_preprocess_views_view__pages__page_2(&$variables) {
 
   $filters = [];
 
-  if (!$view->filter) {
-    return;
-  }
+  if ($view->filter) {
+    foreach ($view->filter as $filter) {
 
-  foreach ($view->filter as $filter) {
-
-    if($filter->isExposed()) {
-      $options = [];
-
-      $filter_options = $filter->getValueOptions();
-
-      if($filter->getPluginId() === 'taxonomy_index_tid') {
-        $filter_options = [];
-        $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($filter->options['vid']);
-        foreach ($terms as $term) {
-          $filter_options[$term->tid] = $term->name;
+      if($filter->isExposed()) {
+        $options = [];
+  
+        $filter_options = $filter->getValueOptions();
+  
+        if($filter->getPluginId() === 'taxonomy_index_tid') {
+          $filter_options = [];
+          $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($filter->options['vid']);
+          foreach ($terms as $term) {
+            $filter_options[$term->tid] = $term->name;
+          }
         }
-      }
-
-      if(!$filter_options) {continue;}
-
-      foreach($filter_options as $id => $label) {
-        $options[] = [
-          'id' => $id,
-          'label' => $label
+  
+        if(!$filter_options) {continue;}
+  
+        foreach($filter_options as $id => $label) {
+          $options[] = [
+            'id' => $id,
+            'label' => $label
+          ];
+        };
+  
+        $test = null;
+  
+        if (isset($filter->definition['entity field'])) {
+          $test = $filter->definition['entity field'];
+        }
+  
+        if (isset($filter->definition['field_name'])) {
+          $test = $filter->definition['field_name'];
+        }
+  
+        $filters[] = [
+          'id' => $filter->options['id'],
+          'options' => $options,
+          'label' => $filter->pluginTitle(),
+          'operator' => $filter->operator,
+          'multiple' => $filter->options['expose']['multiple'],
+          'testKey' => $test,
         ];
       };
-
-      $test = null;
-
-      if (isset($filter->definition['entity field'])) {
-        $test = $filter->definition['entity field'];
-      }
-
-      if (isset($filter->definition['field_name'])) {
-        $test = $filter->definition['field_name'];
-      }
-
-      $filters[] = [
-        'id' => $filter->options['id'],
-        'options' => $options,
-        'label' => $filter->pluginTitle(),
-        'operator' => $filter->operator,
-        'multiple' => $filter->options['expose']['multiple'],
-        'testKey' => $test,
-      ];
-    };
+    }
   }
 
   $variables['#attached']['drupalSettings']['playground']['pages_react']['filters'] = $filters;
+
+  $sorts = [];
+
+  if ($view->sort) {
+    foreach ($view->sort as $sort) {
+      if ($sort->isExposed()) {
+
+        $sorts[] = [
+          'id' => $sort->field,
+          'label' => $sort->pluginTitle(),
+          'direction' => $sort->options['order']
+        ];
+      }
+    }
+  }
+
+  $variables['#attached']['drupalSettings']['playground']['pages_react']['sorts'] = $sorts;
 }
 
 function playground_form_system_theme_settings_alter(&$form, &$form_state, $form_id = NULL) {
