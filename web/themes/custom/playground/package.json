@@ -19,7 +19,8 @@
     "watch:scss": "chokidar \"./src/sass\" -c \"npm run build:scss\"",
     "watch:js": "chokidar \"./src/js\" -c \"npm run build:js\"",
     "watch": "npm run build && npm-run-all --parallel watch:**",
-    "start": "npm-run-all --parallel watch serve"
+    "sync": "browser-sync $npm_package_config_domain $npm_package_config_dist_dir -w",
+    "start": "npm-run-all --parallel watch sync"
   },
   "author": "Tom Evans",
   "license": "ISC",
@@ -34,6 +35,7 @@
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "bootstrap": "^4.5.0",
+    "browser-sync": "^2.26.7",
     "chokidar-cli": "^1.2.3",
     "core-js": "^3.6.5",
     "jest": "^24.9.0",
@@ -53,7 +55,9 @@
     "waypoints": "^4.0.1"
   },
   "config": {
+    "dist_dir": "dist",
     "sass_src": "src/sass/style.scss",
-    "css_dist": "dist/css/style.css"
+    "css_dist": "dist/css/style.css",
+    "domain": "http://playground.ddev.site"
   }
 }
