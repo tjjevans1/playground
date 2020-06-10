@@ -1,0 +1,15 @@
+uuid: a4ce48da-a54f-4622-91b4-d559961264f3
+langcode: en
+status: true
+dependencies: {  }
+name: hero_1920_x_auto_
+label: 'Hero (1920 x auto)'
+effects:
+  71a2f754-cfec-48dc-8f22-40b12c197aab:
+    uuid: 71a2f754-cfec-48dc-8f22-40b12c197aab
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false

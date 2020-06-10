@@ -1,0 +1,31 @@
+uuid: 33a7d66c-d1eb-43d2-8040-449d0a38a3a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.url
+    - field.field.media.image.field_media_image
+    - image.style.hero_1920_x_auto_
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
+id: media.image.url
+targetEntityType: media
+bundle: image
+mode: url
+content:
+  field_media_image:
+    label: hidden
+    settings:
+      image_style: hero_1920_x_auto_
+    third_party_settings: {  }
+    type: image_url
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

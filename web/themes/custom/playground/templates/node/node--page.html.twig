@@ -1,0 +1,8 @@
+{% extends 'node.html.twig' %}
+
+{% block content %}
+  <div{{content_attributes.addClass('container')}}>
+    {{ content|without('field_paragraphs') }}
+  </div>
+  {{ content.field_paragraphs }}
+{% endblock %}

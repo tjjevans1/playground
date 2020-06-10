@@ -1,0 +1,8 @@
+<div {{attributes.addClass("pg-hero")}}>
+  <div class="pg-hero__image" style="background-image: url({{ content.field_hero_image|render|striptags|trim }})"></div>
+  <div class="pg-hero__content">
+    <div class="container">
+      <h1>{{ content.field_title }}</h1>
+    </div>
+  </div>
+</div>
