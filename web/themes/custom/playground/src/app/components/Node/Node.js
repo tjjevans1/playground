@@ -11,6 +11,7 @@ function Node(props) {
         <h2>{props.node.title}</h2>
       </a>
       {ReactHtmlParser(props.node.body)}
+      {ReactHtmlParser(props.node.created)}
       <Tags tags={props.node.field_tags} fieldId="field_tags" />
       <ul>
         <li>

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Filter from "../Filter/Filter";
 
+import { FilterContext } from "../../contexts/Filter/filter-context";
+
 function FilterGroup(props) {
+  const filterContext = useContext(FilterContext);
   return (
     <div>
-      {props.filters.map((filter, key) => {
+      {filterContext.filters.map((filter, key) => {
         return <Filter filter={filter} key={key} />;
       })}
     </div>

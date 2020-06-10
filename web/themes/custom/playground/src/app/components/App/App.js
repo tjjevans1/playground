@@ -4,6 +4,7 @@ import Node from "../Node/Node";
 import FilterGroup from "../FilterGroup/FilterGroup";
 import SortGroup from "../SortGroup/SortGroup";
 import { FilterContext } from "../../contexts/Filter/filter-context";
+import { SortContext } from "../../contexts/Sort/sort-context";
 
 const url = "/rest/pages";
 
@@ -90,6 +91,32 @@ function App(props) {
     return nodes;
   }
 
+  function getSortFunction(sort) {
+    let sortFunction = () => 0.5 - Math.random();
+
+    if (sort && sort.id !== "none") {
+      sortFunction = (a, b) => {
+        console.log(a[sort.id] - b[sort.id]);
+
+        if (sort.direction === "ASC") {
+          return a[sort.id] - b[sort.id];
+        }
+
+        return b[sort.id] - a[sort.id];
+      };
+    }
+
+    return sortFunction;
+  }
+
+  function sortNodes() {
+    const activeSort = stateSorts.filter(sort => sort.active).pop();
+
+    let nodes = stateData.sort(getSortFunction(activeSort));
+
+    return nodes;
+  }
+
   function buildFilters() {
     const filters = window.drupalSettings.playground.pages_react.filters.map(
       filter => {
@@ -133,6 +160,24 @@ function App(props) {
     });
 
     return sorts;
+  }
+
+  function handleSortChange(sort_id) {
+    const sorts = stateSorts.map(sort => {
+      if (sort.id === sort_id) {
+        if (sort.active && sort.id !== "none") {
+          sort.direction = sort.direction === "ASC" ? "DESC" : "ASC";
+        }
+
+        sort.active = true;
+      } else {
+        sort.active = false;
+      }
+
+      return sort;
+    });
+
+    setSorts(sorts);
   }
 
   function handleFilterChange(filter_id, option_id) {
@@ -194,7 +239,8 @@ function App(props) {
     return <div>Loading...</div>;
   }
 
-  const nodes = filterNodes();
+  let nodes = filterNodes();
+  nodes = sortNodes();
 
   return (
     <FilterContext.Provider
@@ -203,15 +249,22 @@ function App(props) {
         updateFilter: handleFilterChange
       }}
     >
-      <div>
-        <FilterGroup filters={stateFilters} />
-        <SortGroup sorts={stateSorts} />
+      <SortContext.Provider
+        value={{
+          sorts: stateSorts,
+          updateSort: handleSortChange
+        }}
+      >
         <div>
-          {nodes.map((node, key) => {
-            return <Node key={key} node={node} />;
-          })}
+          <FilterGroup />
+          <SortGroup />
+          <div>
+            {nodes.map((node, key) => {
+              return <Node key={key} node={node} />;
+            })}
+          </div>
         </div>
-      </div>
+      </SortContext.Provider>
     </FilterContext.Provider>
   );
 }

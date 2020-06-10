@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { SortContext } from "../../contexts/Sort/sort-context";
 
 const CLASSES = {
   filterButton: "pg-filter-button",
@@ -9,6 +11,8 @@ const CLASSES = {
 };
 
 function SortButton(props) {
+  const sortContext = useContext(SortContext);
+
   let classes = [CLASSES.filterButton];
 
   if (props.sort.active) {
@@ -20,15 +24,16 @@ function SortButton(props) {
 
   if (props.sort.direction == "ASC") {
     iconClasses.push(CLASSES.iconArrowUp);
-    icon = <span className={iconClasses.join(" ")}></span>;
-  }
-  if (props.sort.direction == "DESC") {
-    iconClasses.push(CLASSES.iconArrowDown);
-    icon = <span className={iconClasses.join(" ")}></span>;
   }
 
+  if (props.sort.direction == "DESC") {
+    iconClasses.push(CLASSES.iconArrowDown);
+  }
+
+  icon = <span className={iconClasses.join(" ")}></span>;
+
   function handleClick() {
-    console.log(props.sort);
+    sortContext.updateSort(props.sort.id);
   }
 
   return (
