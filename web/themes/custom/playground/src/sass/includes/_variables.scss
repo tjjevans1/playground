@@ -1,15 +1,26 @@
+$cream: #f9f7ef;
+$surf: #53cdd6;
+$sand: #f4d35e;
+$rock: #daddd8;
+$grass: #137e00;
+$earth: #704e2e;
+$slate: #252323;
+$rust: #ff8025;
+$blood: #b3001b;
+$ocean: #2176ae;
+
 // Colours
 $colours: (
-  cream: #f9f7ef,
-  surf: #53cdd6,
-  sand: #f4d35e,
-  rock: #daddd8,
-  grass: #137e00,
-  earth: #704e2e,
-  slate: #252323,
-  rust: #ff8025,
-  blood: #b3001b,
-  ocean: #2176ae
+  cream: $cream,
+  surf: $surf,
+  sand: $sand,
+  rock: $rock,
+  grass: $grass,
+  earth: $earth,
+  slate: $slate,
+  rust: $rust,
+  blood: $blood,
+  ocean: $ocean
 );
 
 // Font Sizes

@@ -1,7 +1,7 @@
 .pg-hero {
   position: relative;
-  color: map-get($map: $colours, $key: cream);
-
+  color: $cream;
+  background-color: $slate;
   min-height: 100vw;
   padding: 30px 0;
   display: flex;

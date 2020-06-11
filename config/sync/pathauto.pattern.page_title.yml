@@ -1,0 +1,14 @@
+uuid: eb130af7-b924-4254-80d6-d2bec6e6def7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: page_title
+label: 'Page Title'
+type: 'canonical_entities:node'
+pattern: '[current-page:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

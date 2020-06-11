@@ -111,3 +111,20 @@ function playground_preprocess_block__system_branding_block(&$variables) {
     }
   }
 }
+
+function playground_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  
+  if($node->hasField('field_hero')) {
+    $hero = $node->field_hero->referencedEntities();
+
+    if (sizeof($hero) > 0) {
+      $media = $hero[0]->field_hero_image->referencedEntities()[0];
+
+      $build = \Drupal::entityTypeManager()->getViewBuilder('media')->view($media, 'url');
+
+
+      $variables['hero_image'] = $build;
+    }
+  }
+}

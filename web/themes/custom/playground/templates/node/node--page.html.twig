@@ -1,8 +1,27 @@
 {% extends 'node.html.twig' %}
 
+{% block hero %}
+  {% if hero_image %}
+    <div class="pg-hero">
+      <div class="pg-hero__image" style="background-image: url({{ hero_image|render|striptags|trim }})"></div>
+      <div class="pg-hero__content">
+        <div class="container">
+          <h1>{{label}}</h1>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="container">
+      <h1>{{label}}</h1>
+    </div>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
-  <div{{content_attributes.addClass('container')}}>
-    {{ content|without('field_paragraphs') }}
+  <div{{content_attributes.addClass('pg-page-section')}}>
+    <div class="container">
+      {{ content|without('field_paragraphs') }}
+    </div>
   </div>
   {{ content.field_paragraphs }}
 {% endblock %}

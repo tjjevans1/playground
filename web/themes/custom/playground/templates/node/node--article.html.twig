@@ -1,0 +1,37 @@
+{% extends 'node.html.twig' %}
+
+{% block hero %}
+  {% if hero_image %}
+    <div class="pg-hero pg-hero--small justify-content-start">
+      <div class="pg-hero__image" style="background-image: url({{ hero_image|render|striptags|trim }})"></div>
+      <div class="pg-hero__content">
+        <div class="container">
+          <a href="/blog" class="pg-button pg-button--tertiary pg-button--arrow-left-thin">{{'Back'|t}}</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block meta %}
+  <div {{content_attributes.addClass("container")}}>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="pg-letterhead">
+          <h1>{{ label }}</h1>
+          <p{{author_attributes.addClass('pg-label')}}>
+            {% trans %}Published
+            {{ date }}
+            | by
+            {{ author_name }}{% endtrans %}
+
+          </p>
+          {{ content|without('field_paragraphs') }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block content %}
+    {{ content.field_paragraphs }}
+  {% endblock %}

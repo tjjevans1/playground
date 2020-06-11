@@ -73,27 +73,28 @@
  */
 #}
 <article{{attributes}}>
+  {% block hero %}
+    <div class="container">
+      <h1>{{label}}</h1>
+    </div>
+  {% endblock %}
 
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{title_attributes}}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{author_attributes}}>
-        {% trans %}Submitted by
-        {{ author_name }}
-        on
-        {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+  {% block meta %}
+    <div class="container">
+      {% if display_submitted %}
+        <footer>
+          {{ author_picture }}
+          <div{{author_attributes}}>
+            {% trans %}Submitted by
+            {{ author_name }}
+            on
+            {{ date }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        </footer>
+      {% endif %}
+    </div>
+  {% endblock %}
 
   {% block content %}
     <div{{content_attributes.addClass('container')}}>
