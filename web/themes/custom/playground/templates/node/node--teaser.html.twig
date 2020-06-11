@@ -1,0 +1,26 @@
+<div {{attributes.addClass('pg-card')}}>
+  <div class="pg-card__inner">
+    <div class="pg-card__image">
+      <img src="{{ hero_image|render|striptags|trim }}">
+    </div>
+    <div class="pg-card__content">
+      <div class="pg-card__content-top">
+        <div class="pg-card__label">
+          M&S
+        </div>
+        <h3 class="pg-card__title">{{label}}</h3>
+      </div>
+      <div class="pg-card__content-bottom">
+        <div class="pg-card__detail">
+          <div class="pg-label">Sector</div>
+          <div>Retail, FMCG</div>
+        </div>
+        <div class="pg-card__detail">
+          <div class="pg-label">Objective</div>
+          <div>Awareness, consideration, sales</div>
+        </div>
+      </div>
+    </div>
+    <a href="{{url}}" class="pg-card__link"></a>
+  </div>
+</div>
